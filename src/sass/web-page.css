@@ -11,7 +11,7 @@
   width: 100vw;
   /* max-width: 1200px; */
   height: 316px;
-  background-image: url(./images/abstract-background.jpg),
+  background-image: url(../images/abstract-background.jpg),
     linear-gradient(314deg, #000 0%, #000 100%);
   background-color: #000;
   background-repeat: no-repeat;
