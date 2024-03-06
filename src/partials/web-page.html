@@ -1,0 +1,102 @@
+<body class="light-mode">
+  <header id="header">
+    <section class="header-section">
+      <div class="container header-container">
+        <div class="header-division">
+          <nav class="header-nav">
+            <ul class="header-list">
+              <li class="header-list form-list">
+                <form class="header-form">
+                  <input
+                    type="text"
+                    name="searchMovie"
+                    id="header-input"
+                    autocomplete="off"
+                    placeholder="Movie search"
+                  />
+                  <button type="submit" class="search-btn btn">
+                    <svg class="loop">
+                      <use
+                        xlink:href="./symbol-defs.svg#icon-search"
+                        class="search-icon"
+                      ></use>
+                    </svg>
+                  </button>
+                </form>
+              </li>
+              <li class="header-list">
+                <button class="btn-nav">
+                  <a
+                    href="../partials/web-page.html"
+                    class="header-link text-nav current"
+                  >
+                    <svg class="nav-icon">
+                      <use xlink:href="./symbol-defs.svg#icon-home"></use>
+                    </svg>
+                    Home
+                  </a>
+                </button>
+              </li>
+              <li class="header-list">
+                <button class="btn-nav">
+                  <a href="#" class="header-link text-nav">
+                    <svg class="nav-icon">
+                      <use
+                        xlink:href="./symbol-defs.svg#icon-video-camera"
+                      ></use>
+                    </svg>
+                    My library
+                  </a>
+                </button>
+              </li>
+              <li class="theme-btn">
+                <button class="toggle-theme btn">
+                  <svg class="icon-theme-mode">
+                    <use
+                      xlink:href="./symbol-defs.svg#icon-sun"
+                      class="sun"
+                    ></use>
+                    <use
+                      xlink:href="./symbol-defs.svg#icon-moon"
+                      class="moon"
+                    ></use>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <a href="../partials/web-page.html" class="header-logo logo">
+            <svg class="header-logo-icon">
+              <use xlink:href="./symbol-defs.svg#icon-film"></use>
+            </svg>
+            Filmoteka
+          </a>
+        </div>
+      </div>
+    </section>
+  </header>
+  <section class="fetch-cards" container>
+    <ul class="list-cards"></ul>
+  </section>
+  <section class="pagination-section">
+    <button class="next-btn">
+      <svg class="pagination-btn">
+        <use xlink:href="./symbol-defs.svg#icon-arrow-left"></use>
+      </svg>
+    </button>
+    <button class="prev-btn">
+      <svg class="pagination-btn">
+        <use xlink:href="./symbol-defs.svg#icon-arrow-right"></use>
+      </svg>
+    </button>
+  </section>
+  <footer class="container footer">
+    <p class="copyright">
+      © 2024 | All Rights Reserved | Developed with
+      <svg class="footer-icon">
+        <use xlink:href="./symbol-defs.svg#icon-heart"></use>
+      </svg>
+      by GoIT Students
+    </p>
+  </footer>
+</body>
