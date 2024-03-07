@@ -1,0 +1,9 @@
+.footer {
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+}
+.footer-icon {
+  width: 14px;
+  height: 14px;
+}

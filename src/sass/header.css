@@ -1,0 +1,156 @@
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+#header {
+  background-image: url(../images/background-desktop.jpg),
+    linear-gradient(314deg, #000 0%, #000 100%);
+  background-color: #000;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+}
+.header-section {
+  width: 100%;
+  height: 316px;
+  padding: 16px 32px 0 32px;
+  /* margin: 0 32px; */
+}
+.container {
+  width: 100%;
+}
+.header-division {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.header-logo-icon {
+  width: 54px;
+  height: 54px;
+  animation: animate360 3s infinite;
+}
+@keyframes animate360 {
+  from {
+    transform: rotateY(360deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+.header-logo {
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 64px;
+  text-align: center;
+  color: #fff;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.header-items:nth-child(-n + 3) {
+  margin-right: 8px;
+}
+.text-nav {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+}
+.btn-nav {
+  background-color: #fee6;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+.btn-nav .header-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-nav .nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+/* .btn-nav:hover .header-link {
+  color: #ff6b08;
+} */
+.btn-nav:hover {
+  background-color: #9d1d1d;
+}
+.container-form {
+  display: flex;
+  justify-content: center;
+}
+.home {
+  width: 99px;
+  height: 42px;
+}
+.library {
+  width: 140px;
+  height: 42px;
+}
+.sun,
+.nav-icon {
+  fill: currentColor;
+}
+.header-form {
+  width: 320px;
+  height: 47px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  background-color: transparent;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#header-input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-align: center;
+}
+#header-input::placeholder {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+}
+.loop {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+.btn {
+  border: none;
+  background: transparent;
+}
+.search-btn {
+  margin-left: auto;
+}
+.icon-theme-mode {
+  width: 25px;
+  height: 25px;
+}
