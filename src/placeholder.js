@@ -9,4 +9,3 @@ function restorePlaceholder(){
         placeholder.setAttribute("placeholder", "Movie search")
     }
 }
-

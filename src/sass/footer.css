@@ -1,9 +1,26 @@
-.footer {
+.footer-section {
   background-color: #f7f7f7;
   display: flex;
   justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 28px;
+  text-align: center;
+  margin: 0 auto;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  color: #545454;
 }
 .footer-icon {
   width: 14px;
   height: 14px;
+}
+.footer-container-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.footer-container-btn:hover {
+  color: #eb3535;
 }
