@@ -1,6 +1,42 @@
-.list-cards {
-  margin-bottom: 60px;
+.main {
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.pagination-section {
-  margin-bottom: 60px;
+.fetch-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .main {
+    margin: 60px auto;
+  }
+}
+.container-pagination {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (min-width: 768px) {
+  .container-pagination {
+    margin-top: 60px;
+  }
+}
+.btn-pgn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-pgn:hover,
+.btn-pgn:focus {
+  background-color: #ca2525;
+  fill: #fff;
 }

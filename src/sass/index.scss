@@ -1,35 +1,3 @@
-:root {
-    --font-family: 'Roboto', 'sans-serif';
-    --white-color: #fff;
-  };
-
-  body {
-    font-family: var(--font-family);
-    margin: 0;
-  }
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0;
-  }
-  ul,
-  li {
-    margin: 0;
-    padding: 0;
-  }
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-  main {
-    width: 100vw;
-    height: auto;
-  }
 
 @import './common';
 @import './example';
@@ -38,7 +6,6 @@
 @import './watched.css';
 @import './queue.css';
 @import './sign-in.css';
-@import './theme-mode.css';
 @import './cards.css';
 @import './modal-cards.css';
 @import './pagination.css';

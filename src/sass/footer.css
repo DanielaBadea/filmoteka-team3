@@ -1,15 +1,36 @@
 .footer-section {
-  background-color: #f7f7f7;
   display: flex;
   justify-content: center;
-  padding-top: 30px;
-  padding-bottom: 28px;
-  text-align: center;
-  margin: 0 auto;
+  align-items: center;
+}
+.container-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 29px 42px;
+}
+.span-text {
   font-family: inherit;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
+  text-align: center;
   color: #545454;
+}
+.students {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+@media screen and (min-width: 768px) {
+  .container-footer {
+    flex-direction: row;
+  }
+  .span-text {
+    font-size: 16px;
+  }
 }
 .footer-icon {
   width: 14px;
