@@ -371,16 +371,12 @@
 .clear-btn:active {
   background-color: #9d1d1d;
 }
+.clear-btn {
+  display: none;
+}
 /* .active {
   background-color: #9d1d1d;
 } */
-.clear-btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 10px;
-  display: flex;
-}
 .cards-container {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -389,6 +385,7 @@
   margin: 20px;
   overflow: hidden;
 }
+
 @media screen and (min-width: 768px) {
   .header-section {
     height: 222px;
