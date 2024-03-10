@@ -1,0 +1,31 @@
+const saveLocalStorage = (key, value) => {
+    try {
+      const serializedState = JSON.stringify(value);
+      localStorage.setItem(key, serializedState);
+    } catch (error) {
+      console.error('Set state error: ', error.message);
+    };
+  };
+  
+  const loadLocalStorage  = key => {
+    try {
+      const serializedState = localStorage.getItem(key);
+      return serializedState === null ? undefined : JSON.parse(serializedState);
+    } catch (error) {
+      console.error('Get state error: ', error.message);
+    };
+  };
+  
+  const removeLocalStorage  = key => {
+    try {
+      localStorage.removeItem(key);
+    } catch (error) {
+      console.error('Get state error: ', error.message);
+    };
+  };
+  
+  export {saveLocalStorage , loadLocalStorage , removeLocalStorage  };
+  export function moviesDataUpdate(data) {
+    localStorage.setItem('moviesData', JSON.stringify(data.results));
+  };
+  
