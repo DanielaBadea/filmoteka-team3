@@ -1,69 +1,107 @@
-<header id="header">
-    <section class="header-container-library container">
-      <div class="header-nav">
-          <nav class="container-nav">
-              <div class="nav-left">
-                  <ul class="header-list-library">
-                      <li class="header-items-library">
-                        <button class="btn-na-library home">
-                          <a href="#" class="header-link-library text-nav-library">
-                            <svg class="nav-icon">
-                              <use xlink:href="../images/symbol-defs.svg#icon-home"></use>
-                            </svg>
-                            Home
-                          </a>
-                        </button>
-                      </li>
-                      <li class="header-items">
-                        <button class="btn-nav library">
-                          <a href="#" class="header-link text-nav">
-                            <svg class="nav-icon">
-                              <use xlink:href="../images/symbol-defs.svg#icon-video-camera"></use>
-                            </svg>
-                            My library
-                          </a>
-                        </button>
-                      </li>
-              </div>
-           <div class="nav-right">
-              <!-- <ul class="header-list">
-                  <li class="mylibrary-btns">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../sass/my-library.css">
+  </head>
+  <body>
+    <header id="header">
+      <section class="header-container container">
+        <div class="header-nav">
+            <nav class="container-nav">
+                <div class="nav-left">
+                    <ul class="header-list">
+                        <li class="header-items">
+                          <button class="btn-nav home">
+                            <a href="../index.html" class="header-link text-nav">
+                              <svg class="nav-icon">
+                                <use xlink:href="../images/symbol-defs.svg#icon-home"></use>
+                              </svg>
+                              Home
+                            </a>
+                          </button>
+                        </li>
+                        <li class="header-items">
+                          <button class="btn-nav library">
+                            <a href="./my-library.html" class="header-link text-nav">
+                              <svg class="nav-icon">
+                                <use xlink:href="../images/symbol-defs.svg#icon-video-camera"></use>
+                              </svg>
+                              My library
+                            </a>
+                          </button>
+                        </li>
+                </div>
+             <div class="nav-right">
+            <!-- <div class="clear-btn-container">
+              <button class="clear-btn">CLEAR WATCHED LIST</button>
+            </div> -->
+                <ul class="header-list">
+                  <li class="header-items mylibrary-btns">
                     <button class="button watched-btn">WATCHED</button>
                   </li>
-                  <li class="header-items theme-btn">
+                  <li class="header-items mylibrary-btns">
                     <button class="button queue-btn active">QUEUE</button>
-                  </li class="clear-btn-container"> -->
-                  <div class="mylibrary-btns">
-                    <button class="button watched-btn">WATCHED</button>
-                    <button class="button queue-btn active">QUEUE</button>
-                  </div>
-                  <div class="clear-btn-container">
-                    <button class="clear-btn">CLEAR WATCHED LIST</button>
-                  </div>
-                  <div class="header-items theme-btn">
-                      <button class="toggle-theme btn">
-                        <svg class="icon-theme-mode">
-                          <use
-                            xlink:href="../images/symbol-defs.svg#icon-sun"
-                            class="sun"
-                          ></use>
-                          <use
-                            xlink:href="../images/symbol-defs.svg#icon-moon"
-                            class="moon"
-                          ></use>
-                        </svg>
-                      </button>
-                    </div>
-           </div>     
-          </nav>
-          <div class="container-logo">
-              <a href="#" class="header-logo logo">
-                <svg class="header-logo-icon">
-                  <use xlink:href="../images/symbol-defs.svg#icon-film"></use>
-                </svg>
-                <span class="logo-name">Filmoteka</span>
-              </a>
-            </div>
+                  </li>
+                    <li class="header-items theme-btn">
+                        <button class="toggle-theme btn">
+                          <svg class="icon-theme-mode">
+                            <use
+                              xlink:href="../images/symbol-defs.svg#icon-sun"
+                              class="sun"
+                            ></use>
+                            <use
+                              xlink:href="../images/symbol-defs.svg#icon-moon"
+                              class="moon"
+                            ></use>
+                          </svg>
+                        </button>
+                      </li>
+                    </ul>
+             </div>     
+            </nav>
+            <div class="container-logo">
+                <a href="../index.html" class="header-logo logo">
+                  <svg class="header-logo-icon">
+                    <use xlink:href="../images/symbol-defs.svg#icon-film"></use>
+                  </svg>
+                  <span class="logo-name">Filmoteka</span>
+                </a>
+              </div>
+          </div>
+      </section>
+    </header>
+      <section class="cards-section">
+        <div class="cards-container"></div>
+      </section>
+      <footer class="footer-section">
+        <div class="container-footer container">
+          <span class="copyright span-text"> © 2024 | All Rights Reserved |</span>
+          <span class="students span-text">
+            Developed with
+            <svg class="footer-icon">
+              <use xlink:href="../images/symbol-defs.svg#icon-heart"></use>
+            </svg>
+            by
+            <button
+              type="button"
+              class="footer-container-btn"
+              data-modal-open-contacts
+            >
+              GoIT Students
+            </button>
+          </span>
         </div>
-    </section>
-  </header>
+      </footer>
+      <script defer type="module" src="../js/theme-mode.js"></script>
+      <script defer type="module" src="../js/active-class.js"></script>
+  </body>
+</html>

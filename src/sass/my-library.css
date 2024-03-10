@@ -1,10 +1,12 @@
+@import './_common.scss';
+
 #header {
   background-color: #000;
   display: flex;
   justify-content: center;
 }
 
-.header-container-library {
+.header-container {
   background-image: url(../images/background-desktop@1x.jpg),
     linear-gradient(314deg, #000 0%, #000 100%);
   background-color: #000;
@@ -12,6 +14,7 @@
   background-size: cover;
   background-position: center;
 }
+
 @media (min-device-pixel-ratio: 2) and (min-width: 320px),
   (min-resolution: 192dpi) and (min-width: 320px),
   (min-resolution: 2dppx) and (min-width: 320px) {
@@ -78,6 +81,81 @@
     gap: 8px;
   }
 }
+.header-form {
+  position: relative;
+}
+#header-input {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  border-radius: 100px;
+  background-color: #fee6;
+  outline: none;
+  border: none;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+#header-input::placeholder {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+}
+.search-btn {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+}
+@media screen and (min-width: 320px) {
+  .header-container {
+    position: relative;
+  }
+  .header-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #header-input {
+    padding: 10px 130px 10px 14px;
+  }
+  .container-nav {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #header {
+    position: relative;
+  }
+  #header-input {
+    padding: 11px 64px 11px 16px;
+  }
+  .container-nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .header-form {
+    position: static;
+    transform: none;
+  }
+  .search-btn {
+    top: 28px;
+    left: 235px;
+  }
+}
+.loop {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
 .btn-nav {
   background-color: #fee6;
   border: none;
@@ -87,6 +165,9 @@
 }
 .btn-nav:hover,
 .btn-nav:focus {
+  background-color: #9d1d1d;
+}
+.btn-nav:active {
   background-color: #9d1d1d;
 }
 @media screen and (min-width: 320px) {
@@ -203,41 +284,58 @@
     font-size: 64px;
   }
 }
-
-/* My Library Page */
-.logo {
+.footer-section {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
 }
-.header-logo {
-  text-decoration: none;
+.container-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 29px 42px;
+}
+.span-text {
   font-family: inherit;
-  font-weight: 500;
-  font-size: 32px;
+  font-weight: 400;
+  font-size: 14px;
   text-align: center;
-  color: #fff;
-  position: absolute;
-  bottom: 27%;
-  left: 22%;
+  color: #545454;
 }
-.header-logo-icon {
-  width: 30px;
-  height: 30px;
-  animation: animate360 3s infinite;
+.students {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
 }
-.header-section {
-  width: 100%;
-  position: relative;
-  height: 460px;
-  padding: 16px 32px 0 32px;
-  /* margin: 0 32px; */
+@media screen and (min-width: 768px) {
+  .container-footer {
+    flex-direction: row;
+  }
+  .span-text {
+    font-size: 16px;
+  }
 }
+.footer-icon {
+  width: 14px;
+  height: 14px;
+}
+.footer-container-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.footer-container-btn:hover {
+  color: #ca2525;
+}
+
+/* My library  */
+
 .mylibrary-btns {
   display: flex;
-  position: absolute;
-  left: 22%;
-  bottom: 15%;
   list-style: none;
   gap: 10px;
   max-width: 100%;
@@ -247,32 +345,40 @@
 .clear-btn {
   padding: 12px 18px 12px;
   color: #fff;
-  background: transparent;
-  border: 1px solid #fff;
+  background-color: #fee6;
+  border: none;
   font-size: 12px;
   line-height: 1.33;
   font-weight: 500;
-  border-radius: 5px;
   cursor: pointer;
-  transition: 0.25s;
   border-radius: 15px;
+  cursor: pointer;
+  background-color: #fee6;
+  transition: background-color 0.3s;
 }
-.active {
+.watched-btn:hover,
+.watched-btn:focus,
+.watched-btn:active {
   background-color: #9d1d1d;
 }
+.queue-btn:hover,
+.queue-btn:focus,
+.queue-btn:active {
+  background-color: #9d1d1d;
+}
+.clear-btn:hover,
+.clear-btn:focus,
+.clear-btn:active {
+  background-color: #9d1d1d;
+}
+/* .active {
+  background-color: #9d1d1d;
+} */
 .clear-btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 10px;
-  display: flex;
-  position: absolute;
-  bottom: 3%;
-  left: 24%;
-}
-/*Card Section - to be adjusted*/
-.card-section {
-  max-width: 95%;
   display: flex;
 }
 .cards-container {
@@ -283,36 +389,11 @@
   margin: 20px;
   overflow: hidden;
 }
-.cards-container img {
-  width: 100%;
-  height: 80%;
-  object-fit: cover;
-  border-radius: 8px;
-  margin: 10px;
-}
-/* Tablet */
 @media screen and (min-width: 768px) {
-  #header {
-    /* background-image: url(../images/background-mylibrary-t.jpg); */
-    background-color: black;
-  }
   .header-section {
     height: 222px;
   }
-  .mylibrary-btns {
-    position: absolute;
-    left: 72%;
-    bottom: 68%;
-  }
-  .clear-btn-container {
-    position: absolute;
-    bottom: 45%;
-    left: 73%;
-  }
   .header-logo {
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
     font-size: 40px;
   }
   .header-logo-icon {
@@ -322,31 +403,27 @@
 }
 /* Desktop */
 @media screen and (min-width: 1280px) {
-  #header {
-    /* background-image: url(../images/background-mylibrary-d.jpg); */
-    background-color: black;
-  }
   .header-section {
     height: 316px;
   }
-  .mylibrary-btns {
-    position: absolute;
-    left: 82%;
-    bottom: 77%;
-  }
-  .clear-btn-container {
-    position: absolute;
-    bottom: 60%;
-    left: 83%;
-  }
   .header-logo {
-    position: absolute;
-    bottom: 10%;
-    left: 3%;
     font-size: 50px;
   }
   .header-logo-icon {
     width: 40px;
     height: 40px;
   }
+}
+
+.cards-container img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.card-section {
+  max-width: 95%;
+  display: flex;
 }
