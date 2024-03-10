@@ -20,7 +20,7 @@ export const getTrending = async (page = 1) => {
 
 export const getSearchMovie = async (query, page) => {
   const { data } = await axios.get(
-    `/search/movie?api_key=${KEY}&language=en-US&query=${query}&page=${page}`
+    `/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}`
   );
   return data;
 };
