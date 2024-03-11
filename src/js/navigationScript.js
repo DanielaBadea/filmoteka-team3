@@ -53,3 +53,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // You can add more event listeners and functionality as needed
 });
+
+//MODAL WINDOW
+
+document.addEventListener('DOMContentLoaded', function () {
+  var modal = document.getElementById('myModal');
+  var movieCards = document.querySelectorAll('.movie-card');
+
+  function openModal(movieId) {
+    var closeBtn = document.querySelector('.close');
+    var movieTitleElem = document.querySelector('.movie-title');
+    var movieOverviewElem = document.querySelector('.movie-overview');
+    var movieReleaseDateElem = document.querySelector('.movie-release-date');
+
+    // Fetch movie details from the API
+    fetch(
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=5b28406cf15f01386b735b4e48c0f3f4`
+    )
+      .then(response => response.json())
+      .then(data => {
+        // Update modal content with movie details
+        movieTitleElem.textContent = data.title;
+        movieOverviewElem.textContent = data.overview;
+        movieReleaseDateElem.textContent = `Release Date: ${data.release_date}`;
+        // Update more elements with other movie details as needed
+
+        modal.style.display = 'block';
+      })
+      .catch(error => console.error('Error fetching movie details:', error));
+
+    // Event listener for the close button inside the modal
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+  }
+
+  movieCards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      // Get the movie ID from the card's data attribute or any other method you use
+      var movieId = card.dataset.movieId; // Adjust this based on your card structure
+
+      // Open the modal with the selected movie's details
+      openModal(movieId);
+    });
+  });
+
+  window.addEventListener('click', function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+});
