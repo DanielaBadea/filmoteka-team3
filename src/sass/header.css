@@ -106,8 +106,12 @@
   border: none;
   background: transparent;
   position: absolute;
-  top: 13px;
-  right: 13px;
+  /* top: 13px;
+  right: 13px; */
+  top: auto;
+  bottom: 50%;
+  right: 10px;
+  transform: translateY(50%);
 }
 @media screen and (min-width: 320px) {
   .header-container {

@@ -1,5 +1,6 @@
-import { getMovieGenres, IMG_BASE_URL, IMG_W400 } from './api';
+import { getMovieGenres, IMG_BASE_URL, IMG_W500 } from './api';
 import { saveLocalStorage } from './storage';
+import { themeRender } from './theme-mode';
  const list = document.querySelector('.list-cards');
 async function getGenres() {
   const genres = await getMovieGenres().then(({ genres }) => genres);
@@ -22,14 +23,15 @@ export function renderMarkup(data) {
           film.genre_names = genre_ids.join(', ');
           if (film.release_date) {
             film.release_date = release_date.slice(0, 4);
-          };
-        });
-      });
+          }
+        })
+      })
     };
     const markupList = createListMarkup(data.results);
     if (list) {
       list.innerHTML = markupList;
-    };
+    }
+    themeRender();
   });
 };
 
@@ -47,7 +49,7 @@ export function createListMarkup(data) {
           release_date,
         }) => {
           let posterPath = ``
-          if (poster_path) { posterPath = `${IMG_BASE_URL}${IMG_W400}/${poster_path}` }
+          if (poster_path) { posterPath = `${IMG_BASE_URL}${IMG_W500}/${poster_path}` }
           else { posterPath = 'No found poster!' }
           return `<li class='list-cards-item' key='${id}'>
             <img
