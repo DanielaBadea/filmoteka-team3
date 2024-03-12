@@ -1,0 +1,9 @@
+import './js/active-class';
+import './js/api';
+import './js/theme-mode';
+import './js/cardsMarkup';
+import './js/constants';
+import './js/placeholder';
+import './js/searchForm';
+import './js/storage';
+import './js/trendings';

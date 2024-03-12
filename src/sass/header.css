@@ -79,54 +79,61 @@
     gap: 8px;
   }
 }
-.header-form {
-  position: relative;
-}
-#header-input {
-  font-family: inherit;
-  font-weight: 400;
-  font-size: 14px;
-  border-radius: 100px;
-  background-color: #fee6;
-  outline: none;
-  border: none;
-  text-align: center;
-  color: #fff;
-  position: relative;
-}
-
-#header-input::placeholder {
-  font-family: inherit;
-  font-weight: 400;
-  font-size: 14px;
-  color: #fff;
-}
-.search-btn {
-  margin-left: auto;
-  border: none;
-  background: transparent;
+.container-pos-form {
   position: absolute;
-  top: 13px;
-  right: 13px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-@media screen and (min-width: 320px) {
-  .header-container {
-    position: relative;
+@media screen and (min-width: 768px) {
+  .container-pos-form {
+    position: static;
+    transform: none;
   }
   .header-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
   }
   #header-input {
-    padding: 10px 130px 10px 14px;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 100px;
+    background-color: #fee6;
+    outline: none;
+    border: none;
+    text-align: center;
+    color: #fff;
+    /* position: relative; */
+  }
+
+  #header-input::placeholder {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+  }
+  .search-btn {
+    margin-left: auto;
+    border: none;
+    background: none;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+  }
+  @media screen and (min-width: 320px) {
+    .header-container {
+      position: relative;
+    }
   }
   .container-nav {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     gap: 8px;
+  }
+  #header-input {
+    padding: 10px 130px 10px 14px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -141,12 +148,7 @@
     justify-content: space-between;
   }
   .header-form {
-    position: static;
-    transform: none;
-  }
-  .search-btn {
-    top: 28px;
-    left: 235px;
+    position: relative;
   }
 }
 .loop {
@@ -163,9 +165,6 @@
 }
 .btn-nav:hover,
 .btn-nav:focus {
-  background-color: #9d1d1d;
-}
-.btn-nav:active {
   background-color: #9d1d1d;
 }
 @media screen and (min-width: 320px) {
@@ -190,7 +189,6 @@
   text-transform: uppercase;
   text-align: center;
   color: #fff;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
