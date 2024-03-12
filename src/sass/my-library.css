@@ -1,11 +1,9 @@
 @import './_common.scss';
-
 #header {
   background-color: #000;
   display: flex;
   justify-content: center;
 }
-
 .header-container {
   background-image: url(../images/background-desktop@1x.jpg),
     linear-gradient(314deg, #000 0%, #000 100%);
@@ -14,7 +12,6 @@
   background-size: cover;
   background-position: center;
 }
-
 @media (min-device-pixel-ratio: 2) and (min-width: 320px),
   (min-resolution: 192dpi) and (min-width: 320px),
   (min-resolution: 2dppx) and (min-width: 320px) {
@@ -44,7 +41,6 @@
   justify-content: space-between;
   margin-bottom: 151px;
 }
-
 @media screen and (min-width: 768px) {
   .container-nav {
     margin-bottom: 105px;
@@ -81,6 +77,18 @@
     gap: 8px;
   }
 }
+.container-pos-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 768px) {
+  .container-pos-form {
+    position: static;
+    transform: none;
+  }
+}
 .header-form {
   position: relative;
 }
@@ -94,9 +102,7 @@
   border: none;
   text-align: center;
   color: #fff;
-  position: relative;
 }
-
 #header-input::placeholder {
   font-family: inherit;
   font-weight: 400;
@@ -106,29 +112,24 @@
 .search-btn {
   margin-left: auto;
   border: none;
-  background: transparent;
+  background: none;
   position: absolute;
-  top: 13px;
-  right: 13px;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
 }
 @media screen and (min-width: 320px) {
   .header-container {
     position: relative;
-  }
-  .header-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  #header-input {
-    padding: 10px 130px 10px 14px;
   }
   .container-nav {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     gap: 8px;
+  }
+  #header-input {
+    padding: 10px 130px 10px 14px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -143,12 +144,7 @@
     justify-content: space-between;
   }
   .header-form {
-    position: static;
-    transform: none;
-  }
-  .search-btn {
-    top: 28px;
-    left: 235px;
+    position: relative;
   }
 }
 .loop {
@@ -165,9 +161,6 @@
 }
 .btn-nav:hover,
 .btn-nav:focus {
-  background-color: #9d1d1d;
-}
-.btn-nav:active {
   background-color: #9d1d1d;
 }
 @media screen and (min-width: 320px) {
@@ -192,7 +185,6 @@
   text-transform: uppercase;
   text-align: center;
   color: #fff;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,7 +215,6 @@
 .moon {
   display: none;
 }
-
 .header-logo-icon {
   animation: animate360 3s infinite;
 }
@@ -250,13 +241,11 @@
     font-size: 32px;
   }
 }
-
 .header-logo {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-
 @media screen and (min-width: 320px) {
   .header-logo-icon {
     width: 32px;
@@ -333,7 +322,6 @@
 }
 
 /* My library  */
-
 .mylibrary-btns {
   display: flex;
   list-style: none;
@@ -374,9 +362,6 @@
 .clear-btn {
   display: none;
 }
-/* .active {
-  background-color: #9d1d1d;
-} */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -385,7 +370,6 @@
   margin: 20px;
   overflow: hidden;
 }
-
 @media screen and (min-width: 768px) {
   .header-section {
     height: 222px;
@@ -411,7 +395,6 @@
     height: 40px;
   }
 }
-
 .cards-container img {
   width: 100%;
   height: 80%;
@@ -419,7 +402,6 @@
   border-radius: 8px;
   margin: 10px;
 }
-
 .card-section {
   max-width: 95%;
   display: flex;

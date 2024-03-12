@@ -47,3 +47,4 @@
         applyTheme(isLightMode);
     });
 };
+themeRender()
