@@ -7,3 +7,4 @@ import './js/searchForm.js';
 import './js/storage.js';
 import './js/theme-mode.js';
 import './js/trendings.js';
+import './js/modal-login.js';
