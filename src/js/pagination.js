@@ -1,13 +1,13 @@
 import { sample } from 'lodash';
 import Pagination from 'tui-pagination';
 // import 'tui-pagination/dist/tui-pagination.css';
-
+console.log('sal');
 export function initPagination(totalItems, funcOutputData, args) {
   const itemsPerPage = 300;
   if (totalItems <= itemsPerPage) {
     return;
   }
-  console.log('sal');
+
   const options = {
     totalItems,
     itemsPerPage,
