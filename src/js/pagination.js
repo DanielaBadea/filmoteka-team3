@@ -1,19 +1,17 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
-export function initPagination(totalItems, funcOutputData, args) {
-  const itemsPerPage = 20; // Кількість елементів на одній сторінці
-
-  // Якщо всі елементи вміщюються на одну сторінку, то пагінація не потрібна
+function initPagination(totalItems, funcOutputData, args) {
+  const itemsPerPage = 20;
   if (totalItems <= itemsPerPage) {
     return;
   }
 
   const options = {
-    totalItems, // Загальна кількість елементів
-    itemsPerPage, // Кількість елементів на одній сторінці
-    visiblePages: 5, // Кількість видимих сторінок
-    page: 1, // З якої сторінки починається вивід
+    totalItems,
+    itemsPerPage,
+    visiblePages: 5,
+    page: 1,
     centerAlign: true,
     firstItemClassName: 'tui-first-child',
     lastItemClassName: 'tui-last-child',
