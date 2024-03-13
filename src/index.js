@@ -7,3 +7,4 @@ import './js/placeholder';
 import './js/searchForm';
 import './js/storage';
 import './js/trendings';
+import './js/pagination';
