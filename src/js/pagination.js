@@ -1,49 +1,26 @@
-import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
-
-function initPagination(totalItems, funcOutputData, args) {
-  const itemsPerPage = 20;
-  if (totalItems <= itemsPerPage) {
-    return;
-  }
-
-  const options = {
-    totalItems,
-    itemsPerPage,
-    visiblePages: 5,
-    page: 1,
-    centerAlign: true,
-    firstItemClassName: 'tui-first-child',
-    lastItemClassName: 'tui-last-child',
-    template: {
-      page: '<a href="#" class="tui-page-btn">{{page}}</a>',
-      currentPage:
-        '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
-      moveButton:
-        '<a href="#" class="tui-page-btn tui-{{type}}">' +
-        '<span class="tui-ico-{{type}}">{{type}}</span>' +
-        '</a>',
-      disabledMoveButton:
-        '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
-        '<span class="tui-ico-{{type}}">{{type}}</span>' +
-        '</span>',
-      moreButton:
-        '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
-        '<span class="tui-ico-ellip">...</span>' +
-        '</a>',
-    },
-  };
-
-  const pagination = new Pagination('pagination', options);
-
-  pagination.on('beforeMove', evt => {
-    const { page } = evt;
-    window.scrollTo(0, 0);
-
-    if (args) {
-      funcOutputData(args, page);
-    } else {
-      funcOutputData(page);
-    }
+import { getTrending } from './api';
+import { renderMarkup } from './cardsMarkup';
+import { saveLocalStorage } from './storage';
+function getTrendingMovies() {
+  getTrending(page).then(data => {
+    renderMarkup(data);
+    saveLocalStorage('moviesData', data.results);
   });
 }
+let page = 1;
+getTrendingMovies();
+
+const nextBtn = document.querySelector('.prev-btn');
+const prevBtn = document.querySelector('.next-btn');
+nextBtn.addEventListener('click', () => {
+  page++;
+  getTrendingMovies();
+});
+prevBtn.addEventListener('click', () => {
+  if (page > 1) {
+    page--;
+    getTrendingMovies();
+  } else {
+    prevBtn.classList.add('disabled');
+  }
+});
