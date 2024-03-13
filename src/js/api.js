@@ -1,4 +1,5 @@
 import axios from 'axios';
+import * as pagination from './pagination';
 
 import { API_KEY } from './constants';
 axios.defaults.baseURL = `https://api.themoviedb.org/3`;

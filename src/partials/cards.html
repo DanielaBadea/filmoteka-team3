@@ -1,11 +1,11 @@
-<main class="main">
+<main id="container" class="main">
   <div class="fetch-cards container">
     <div class="container-list-cards">
       <ul class="list-cards">
         <li class="list-cards-item"></li>
       </ul>
     </div>
-    <div class="container-pagination">
+    <!-- <div class="container-pagination">
       <button class="next-btn btn-pgn">
         <svg class="pagination-btn">
           <use xlink:href="./images/symbol-defs.svg#icon-arrow-left"></use>
@@ -16,6 +16,30 @@
           <use xlink:href="./images/symbol-defs.svg#icon-arrow-right"></use>
         </svg>
       </button>
-    </div>
+    </div> -->
+    <!-- <div class="pagination">
+      <button
+        class="pagination__button--arrow"
+        type="button"
+        aria-label="previous-page"
+      >
+        <svg width="16" height="16">
+          <use href="./images/symbol-defs.svg#icon-arrow-left"></use>
+        </svg>
+      </button>
+      <div class="pagination__container--first-button hidden-in-mobile"></div>
+      <div class="pagination__container--buttons"></div>
+      <div class="pagination__container--last-button hidden-in-mobile"></div>
+      <button
+        class="pagination__button--arrow"
+        type="button"
+        aria-label="next-page"
+      >
+        <svg width="16" height="16">
+          <use href="./images/symbol-defs.svg#icon-arrow-right"></use>
+        </svg>
+      </button>
+    </div> -->
+    <div id="pagination" class="tui-pagination goit-pagination"></div>
   </div>
 </main>

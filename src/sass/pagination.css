@@ -1,4 +1,4 @@
-.pagination-section {
+/* .pagination-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,4 +6,142 @@
 .pagination-btn {
   width: 25px;
   height: 25px;
+}
+
+.tui-page-btn {
+  border: none;
+  line-height: 1.2px;
+  font-weight: 500;
+  color: #000;
+}
+
+.tui-is-selected {
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  color: white;
+  border-radius: 5px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.tui-ico-first,
+.tui-ico-last {
+  margin-top: 8px;
+}
+
+.tui-prev {
+  margin-right: 5px;
+}
+.tui-next {
+  margin-left: 5px;
+}
+.tui-prev,
+.tui-next {
+  width: 25px;
+  height: 25px;
+
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  position: relative;
+}
+
+.tui-ico-next,
+.tui-ico-prev {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-position: center;
+}
+.tui-ico-prev {
+  background-image: url('../images/symbol-defs.svg#icon-arrow-left');
+}
+.tui-ico-next {
+  background-image: url('../images/symbol-defs.svg#icon-arrow-right');
+} */
+.tui-pagination.goit-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.tui-pagination.goit-pagination .tui-page-btn {
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+
+  color: var(--primary-text-color);
+}
+
+.tui-pagination.goit-pagination .tui-page-btn:hover,
+.tui-pagination.goit-pagination .tui-page-btn:focus {
+  background: none;
+}
+
+.tui-pagination.goit-pagination .tui-page-btn.tui-is-selected {
+  width: 40px;
+  height: 40px;
+  padding: 13px;
+
+  color: var(--secondaryColor);
+  background: var(--mainAccentColor);
+  border-radius: 5px;
+  border-color: var(--mainAccentColor);
+}
+
+.tui-pagination.goit-pagination .tui-prev,
+.tui-pagination.goit-pagination .tui-prev:hover,
+.tui-pagination.goit-pagination .tui-prev:focus,
+.tui-pagination.goit-pagination .tui-next,
+.tui-pagination.goit-pagination .tui-next:hover,
+.tui-pagination.goit-pagination .tui-next:focus {
+  width: 40px;
+  height: 40px;
+  padding: 13px 20px 13px 7px;
+
+  background: var(--footerColor);
+  border-radius: 5px;
+}
+
+.tui-pagination.goit-pagination .tui-ico-prev,
+.tui-pagination.goit-pagination .tui-ico-next {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+}
+
+.tui-pagination.goit-pagination .tui-ico-prev {
+  background-image: url('../images/symbol-defs.svg#icon-arrow-left');
+}
+
+.tui-pagination.goit-pagination .tui-ico-next {
+  background-image: url('../images/symbol-defs.svg#icon-arrow-left-right');
+}
+
+.tui-pagination.goit-pagination .tui-is-disabled .tui-ico-prev,
+.tui-pagination.goit-pagination .tui-is-disabled .tui-ico-next {
+  background-position: center;
+}
+
+.tui-pagination.goit-pagination .tui-ico-first,
+.tui-pagination.goit-pagination .tui-ico-last {
+  display: none;
+}
+
+.tui-ico-prev,
+.tui-ico-next {
+  color: transparent;
 }
