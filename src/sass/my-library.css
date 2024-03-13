@@ -362,7 +362,7 @@
 .clear-btn {
   display: none;
 }
- MyLibrary-buttons
+/* MyLibrary-buttons */
 
 .cards-container {
   display: grid;
@@ -408,7 +408,45 @@
   max-width: 95%;
   display: flex;
 }
-
+/*  Posters ls btn watched list  */
+.cards-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.watched-movies-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.container-posters-ls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.poster-list-img {
+  width: 380px;
+  margin-bottom: 10px;
+}
+/*  Posters ls btn queue list  */
+.hiddenContent-queue {
+  display: none;
+}
+.hiddenContent {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .watched-movies-list {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .poster-list-img {
+    width: 340px;
+  }
+}
 /*Modal Window */
 
 .modal {

@@ -34,3 +34,14 @@ export const getMovieGenres = async () => {
   const { data } = await axios.get(`/genre/movie/list?api_key=${API_KEY}`);
   return data;
 };
+
+// export const getMovieGenres = async () => {
+//   return axios.get(`/genre/movie/list?api_key=${API_KEY}`)
+//     .then(response => {
+//       return response.data;
+//     })
+//     .catch(error => {
+//       console.error('Error fetching movie genres:', error);
+//       throw error;
+//     });
+// };
