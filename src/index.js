@@ -10,3 +10,4 @@ import './js/theme-mode.js';
 import './js/trendings.js';
 // import './js/watched.js'
 import './js/modal-login.js';
+import './js/firebase.js';
