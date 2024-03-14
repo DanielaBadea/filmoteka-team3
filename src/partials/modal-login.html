@@ -9,19 +9,19 @@
                 <button type="button" class="toggle-btn" onclick="register()">Register</button>
             </div>
             <form id="login" class="input-group">
-                <input type="email" class="input-field" placeholder="Enter Your Email" required>
-                <input type="password" class="input-field" placeholder="Enter Your Password" required>
+                <input type="email" class="input-field" id="login_email" placeholder="Enter Your Email" required>
+                <input type="password" class="input-field" id="login_password" placeholder="Enter Your Password" required>
                 <input type="checkbox" class="check-box"><span class="span-modal">Remember my password</span>
-                <button type="submit" class="submit-btn">Login</button>
+                <button type="button" id="loginbtn" class="submit-btn" onclick="loginModal()">Login</button>
                 <div class="reset-password">
-                    <a href="#">Forgot your passwords?</a>
+                    <a href="#">Forgot your password?</a>
                 </div>
             </form>
             <form id="register" class="input-group">
                 <input type="email" class="input-field" id="register_email" placeholder="Enter Your Email" required>
                 <input type="password" class="input-field" id="register_password" placeholder="Enter Your Password" required>
                 <input type="checkbox" class="check-box"><span class="span-modal">I agree to the terms & conditions</span>
-                <button type="submit" class="submit-btn">Register</button>
+                <button type="button" id="registerbtn" class="submit-btn" onclick="registerModal()">Register</button>
             </form>
         </div>
     </div>
