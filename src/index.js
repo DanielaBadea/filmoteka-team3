@@ -13,6 +13,6 @@ import './js/trendings.js';
 import './js/modal-login.js';
 import './js/firebase.js';
 import './js/modal-cards.js'
-import './js/pagination';
-import './js/modal';
+import './js/pagination.js';
+import './js/modal.js';
 
