@@ -13,7 +13,7 @@
 .list-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  gap: 16px;
 }
 .list-cards-item {
   border-radius: 5px;
@@ -23,7 +23,8 @@
     margin-bottom: 20px;
   }
   .list-cards-item {
-    width: 280px;
+    /* width: 280px; */
+    width: calc((100% - 32px) / 3);
   }
 }
 @media screen and (min-width: 768px) {

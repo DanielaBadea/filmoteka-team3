@@ -16,6 +16,7 @@ const genresConverting = (genresIds) => {
   });
   return(genreArray.join(', '));
 };
+
 const modalMoviemarkup = ({poster_path, popularity, vote_average, vote_count, original_title, genre_ids, overview}) => {
 let posterPath = ``;
 if(poster_path){posterPath=`${IMG_BASE_URL}${IMG_W400}/${poster_path}`}else{posterPath='No found poster!'}
@@ -53,8 +54,8 @@ return `
   </p>
 </div>
 <div class="modal__buttons">
-    <button type="button" class="modal__add-watched" data-watched='false' data-liery='false'>add to watched</button>
-    <button type="button" class="modal__add-queue" data-queue='false' data-liery='false'>add to queue</button>
+    <button type="button" class="modal__add-watched" data-watched='false'>add to watched</button>
+    <button type="button" class="modal__add-queue" data-queue='false' >add to queue</button>
     </div>
     </div>
   </div>`;

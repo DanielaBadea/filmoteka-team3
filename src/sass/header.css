@@ -281,3 +281,6 @@
     font-size: 64px;
   }
 }
+.active {
+  background-color: #f5f84d;
+}

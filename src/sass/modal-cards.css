@@ -11,6 +11,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  z-index: 10000;
 }
 .modal-backdrop.modal-open {
   pointer-events: all;
@@ -29,6 +30,7 @@
   margin: 0 auto;
   padding: 48px 20px 40px;
   position: relative;
+  z-index: 100000;
 }
 @media (min-width: 768px) {
   .modal {
