@@ -8,3 +8,4 @@ import './js/searchForm';
 import './js/storage';
 import './js/trendings';
 import './js/pagination';
+import './js/modal';
