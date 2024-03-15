@@ -19,11 +19,10 @@ Notiflix.Notify.init({
 
 async function handleSearch(event) {
     event.preventDefault(); 
-    const searchTerm = searchInput.value.trim(); // Get search term
+    const searchTerm = searchInput.value.trim();
 
     try {
         if (!searchTerm) {
-            // Afiseaza eroarea daca searchTerm este gol
             return Notiflix.Notify.failure("Please enter a movie name!");
         }
 
@@ -39,3 +38,5 @@ async function handleSearch(event) {
 }
 
 document.querySelector('.header-form').addEventListener('submit', handleSearch);
+
+const loader = document.getElementById('loader');

@@ -43,7 +43,7 @@ export function renderMarkup(data) {
   });
 };
 
-function createListMarkup(data) {
+export function createListMarkup(data) {
   if (data) {
     const markup = data.map(({ original_title, poster_path, overview, vote_average, id, genre_names, release_date }) => {
       let posterPath = '';

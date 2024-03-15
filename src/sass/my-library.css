@@ -11,6 +11,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  width: 100vw;
 }
 @media (min-device-pixel-ratio: 2) and (min-width: 320px),
   (min-resolution: 192dpi) and (min-width: 320px),
@@ -320,6 +321,9 @@
 .footer-container-btn:hover {
   color: #ca2525;
 }
+footer-container-btn:focus {
+  color: #ca2525;
+}
 
 /* My library  */
 .mylibrary-btns {
@@ -446,40 +450,4 @@
   .poster-list-img {
     width: 340px;
   }
-}
-/*Modal Window */
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-  position: relative;
-}
-
-.close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.movie-details {
-  text-align: center;
 }

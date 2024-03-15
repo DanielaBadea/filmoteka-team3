@@ -8,3 +8,4 @@ import './js/searchForm.js';
 import './js/storage.js';
 import './js/trendings.js';
 // import './js/watched.js'
+import './js/modal-cards.js'
