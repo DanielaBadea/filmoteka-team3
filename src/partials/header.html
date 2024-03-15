@@ -1,5 +1,5 @@
   <header id="header">
-    <section class="header-container container">
+    <section class="header-container ">
       <div class="header-nav">
           <nav class="container-nav">
               <div class="nav-left">
@@ -13,8 +13,6 @@
                               id="header-input"
                               autocomplete="off"
                               placeholder="Movie search"
-                              onfocus="removePlaceholder()"
-                              onblur="restorePlaceholder()"
                             />
                             <button type="submit" class="search-btn btn">
                               <svg class="loop">
@@ -26,7 +24,7 @@
                       </li>
                       <li class="header-items">
                         <button class="btn-nav home">
-                          <a href="./index.html" class="header-link text-nav">
+                          <a href="./index.html" class="header-link text-nav ">
                             <svg class="nav-icon">
                               <use xlink:href="./images/symbol-defs.svg#icon-home"></use>
                             </svg>
@@ -38,7 +36,7 @@
                         <button class="btn-nav library">
                           <a href="./partials/my-library.html" class="header-link text-nav">
                             <svg class="nav-icon">
-                              <use xlink:href="./images/symbol-defs.svg#icon-video-camera"></use>
+                              <use xlink:href="./images/symbol-defs.svg#icon-video-camera "></use>
                             </svg>
                             My library
                           </a>
@@ -48,7 +46,7 @@
            <div class="nav-right">
               <ul class="header-list">
                   <li>
-                      <button type="button" class="btn-nav text-nav btn-logIn">
+                      <button data-modal-open type="button" class="btn-nav text-nav btn-logIn">
                         <svg class="nav-icon">
                           <use xlink:href="./images/symbol-defs.svg#icon-user"></use>
                         </svg>Log in</button>

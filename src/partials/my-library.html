@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>library</title>
+    <!-- <link rel="icon" type="image/png" href="../images/icon-title.png" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,18 +12,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../sass/my-library.css">
-    <script type="module" src="../js/navigationScript.js"></script>
   </head>
   <body>
     <header id="header">
-      <section class="header-container container">
+      <section class="header-container header-container-lib ">
         <div class="header-nav">
             <nav class="container-nav">
                 <div class="nav-left">
                     <ul class="header-list">
                         <li class="header-items">
                           <button class="btn-nav home">
-                            <a href="../index.html" class="header-link text-nav">
+                            <a href="../index.html" class="header-link text-nav ">
                               <svg class="nav-icon">
                                 <use xlink:href="../images/symbol-defs.svg#icon-home"></use>
                               </svg>
@@ -47,10 +47,10 @@
                    <button id="watchedButton" class="button watched-btn">WATCHED</button>
                   </li>
                   <li class="header-items mylibrary-btns">
-                  <button id="queueButton" class="button queue-btn active">QUEUE</button>
+                  <button id="queueButton" class="button queue-btn">QUEUE</button>
                   </li>
                   <li class="header-items clear-btn-container">
-                    <button class="clear-btn">CLEAR WATCHED LIST</button>
+                    <button id = "clearButton" class="clear-btn">CLEAR WATCHED LIST</button>
                   </li>
                     <li class="header-items theme-btn">
                         <button class="toggle-theme btn">
@@ -80,11 +80,19 @@
           </div>
       </section>
     </header>
+    <section class="taggle-section-lib">
+      <!-- Posters ls btn watched list -->
+      <div class="cards-section">
+        <div class="container"><div class="watched-movies-list"></div></div>   
+      </div>
+      <!-- Posters ls btn queue list -->
+      <div class="cards-section">
+        <div class="container"><div class="queue-movies-list">
+          <img class="hiddenContent-queue" src="../images/library/queue/missingMovies.jpg" alt="Missing movies">
+        </div></div>
+      </div>
+    </section>
 
-  
-      <section class="cards-section">
-        <div class="cards-container"></div>
-      </section>
       <footer class="footer-section">
         <div class="container-footer container">
           <span class="copyright span-text"> © 2024 | All Rights Reserved |</span>
@@ -105,7 +113,7 @@
         </div>
       </footer>
 
-<div id="myModal" class="modal">
+<!-- <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
     <div class="movie-details">
@@ -114,9 +122,10 @@
       <p class="movie-release-date"></p>
     </div>
   </div>
-</div>
-
+</div> -->
       <script defer type="module" src="../js/theme-mode.js"></script>
       <script defer type="module" src="../js/active-class.js"></script>
+      <script defer type ="module" src="../js/watched.js"></script>
+      <script defer src="../js/queue.js"></script>
   </body>
 </html>

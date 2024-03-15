@@ -1,11 +1,18 @@
-import './js/active-class';
-import './js/api';
-import './js/theme-mode';
-import './js/cardsMarkup';
-import './js/constants';
-import './js/placeholder';
-import './js/searchForm';
-import './js/storage';
-import './js/trendings';
+
+import './js/active-class.js';
+import './js/api.js';
+import './js/theme-mode.js';
+import './js/cardsMarkup.js';
+import './js/constants.js';
+import './js/placeholder.js';
+import './js/searchForm.js';
+import './js/storage.js';
+import './js/theme-mode.js';
+import './js/trendings.js';
+// import './js/watched.js'
+import './js/modal-login.js';
+import './js/firebase.js';
+import './js/modal-cards.js'
 import './js/pagination';
 import './js/modal';
+
