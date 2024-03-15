@@ -4,35 +4,36 @@
   display: flex;
   justify-content: center;
 }
-.header-container {
-  background-image: url(../images/background-desktop@1x.jpg),
+.header-container-lib {
+  background-image: url(../images/library/background-lib-desktop@1x.png),
     linear-gradient(314deg, #000 0%, #000 100%);
   background-color: #000;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  width: 100vw;
 }
 @media (min-device-pixel-ratio: 2) and (min-width: 320px),
   (min-resolution: 192dpi) and (min-width: 320px),
   (min-resolution: 2dppx) and (min-width: 320px) {
-  .header-container {
-    background-image: url(../images/background-mobile@2x.jpg),
+  .header-container-lib {
+    background-image: url(../images/library/background-lib-mobile@2x.png),
       linear-gradient(314deg, #000 0%, #000 100%);
   }
 }
 @media (min-device-pixel-ratio: 2) and (min-width: 768px),
   (min-resolution: 192dpi) and (min-width: 768px),
   (min-resolution: 2dppx) and (min-width: 768px) {
-  .header-container {
-    background-image: url(../images/background-tablet@2x.jpg),
+  .header-container-lib {
+    background-image: url(../images/library/background-lib-tablet@2x.png),
       linear-gradient(314deg, #000 0%, #000 100%);
   }
 }
 @media (min-device-pixel-ratio: 2) and (min-width: 1200px),
   (min-resolution: 192dpi) and (min-width: 1200px),
   (min-resolution: 2dppx) and (min-width: 1200px) {
-  .header-container {
-    background-image: url(../images/background-desktop@2x.jpg),
+  .header-container-lib {
+    background-image: url(../images/library/background-lib-desktop@2x.png),
       linear-gradient(314deg, #000 0%, #000 100%);
   }
 }
@@ -320,6 +321,9 @@
 .footer-container-btn:hover {
   color: #ca2525;
 }
+footer-container-btn:focus {
+  color: #ca2525;
+}
 
 /* My library  */
 .mylibrary-btns {
@@ -362,7 +366,7 @@
 .clear-btn {
   display: none;
 }
- MyLibrary-buttons
+/* MyLibrary-buttons */
 
 .cards-container {
   display: grid;
@@ -408,40 +412,42 @@
   max-width: 95%;
   display: flex;
 }
-
-/*Modal Window */
-
-.modal {
+/*  Posters ls btn watched list  */
+.cards-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.watched-movies-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.container-posters-ls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.poster-list-img {
+  width: 380px;
+  margin-bottom: 10px;
+}
+/*  Posters ls btn queue list  */
+.hiddenContent-queue {
   display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.7);
 }
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-  position: relative;
+.hiddenContent {
+  display: none;
 }
-
-.close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.movie-details {
-  text-align: center;
+@media screen and (min-width: 768px) {
+  .watched-movies-list {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .poster-list-img {
+    width: 340px;
+  }
 }
