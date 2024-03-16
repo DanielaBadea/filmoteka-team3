@@ -67,6 +67,7 @@
   justify-content: center;
   padding-top: 15px;
   align-items: center;
+  gap: 10px;
 }
 .team-name {
   padding-top: 10px;
@@ -85,8 +86,16 @@
   width: 170px;
   text-align: center;
 }
-@media screen and (max-width: 767px) {
-  .mondial-container {
+@media screen and (max-width: 650px) {
+  .mondial-content {
     max-width: 300px;
+  }
+}
+@media screen and (min-width: 651px) and (max-width: 1200px) {
+  .mondial-content {
+    max-width: 520px;
+    top: 50%;
+    left: 50%;
+    padding-left: 30px;
   }
 }
