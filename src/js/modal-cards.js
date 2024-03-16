@@ -67,7 +67,9 @@ if (list) {
 export function createModal(event) {
     const selectedMovie = event.target.closest('li');
     const selectedMovieId = Number(selectedMovie.getAttribute('key'));
-    const moviesData = JSON.parse(localStorage.getItem('moviesData')); 
+    const parseData = localStorage.getItem('moviesData')
+    const moviesData = JSON.parse(parseData); 
+
     saveLocalStorage('moviesData', moviesData);
     console.log(moviesData);
   

@@ -41,8 +41,8 @@ async function handleSearch(event) {
             return Notiflix.Notify.failure("Search result not successful. Enter the correct movie name!");
         }
 
-         const moviesDataForm = saveLocalStorage(STORAGE_KEY_SEARCH, searchResult);
-         saveLocalStorage('moviesData', moviesDataForm);
+        saveLocalStorage(STORAGE_KEY_SEARCH, searchResult);
+         saveLocalStorage('moviesData', searchResult.results);
 
         renderMarkup(searchResult);
     } catch (error) {
