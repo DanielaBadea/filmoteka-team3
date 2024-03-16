@@ -3,13 +3,13 @@ import { debounce } from 'lodash';
 import Notiflix from 'notiflix';
 import { getSearchMovie } from './api'; 
 import { renderMarkup } from './cardsMarkup'; 
+import { saveLocalStorage } from './storage';
+import { STORAGE_KEY_SEARCH } from './constants';
 
-// Declarație pentru elementul loader
 const loader = document.querySelector('.loader');
 
 const searchInput = document.getElementById('header-input');
 
-// Configurare Notiflix
 Notiflix.Notify.init({
     width: '400px',
     position: 'right-bottom',
@@ -29,21 +29,26 @@ async function handleSearch(event) {
             return Notiflix.Notify.failure("Please enter a movie name!");
         }
 
-        // Afiseaza loader-ul
-        loader.style.display ='block';
+        if (loader.style.display === 'block') {
+            loader.style.display = 'block';
+            document.querySelector('.hendlerCont').innerHTML = "";
+        }
 
         const searchResult = await getSearchMovie(searchTerm, 1); 
-       
+        
         if (!searchResult.results || searchResult.results.length === 0) {
             return Notiflix.Notify.failure("Search result not successful. Enter the correct movie name!");
-        }        
+        }
+
+         saveLocalStorage(STORAGE_KEY_SEARCH, searchResult);
+
         renderMarkup(searchResult);
     } catch (error) {
         console.error('Error searching for movies:', error);
     } finally {
-        // Ascunde loader-ul
         loader.style.display = 'none';
     }
 }
+
 
 document.querySelector('.header-form').addEventListener('submit', handleSearch);

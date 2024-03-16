@@ -1,6 +1,7 @@
 import { saveLocalStorage } from './storage';
 import { IMG_BASE_URL, IMG_W400 } from './api';
 import {loadLocalStorage} from './storage';
+import { STORAGE_KEY_SEARCH } from './constants';
 
 const modalBackdrop = document.querySelector('.modal-backdrop');
 const movieModal = document.querySelector('.modal');
@@ -67,12 +68,15 @@ if (list) {
 function createModal(event) {
     const selectedMovie = event.target.closest('li');
     const selectedMovieId = Number(selectedMovie.getAttribute('key'));
-    let moviesData = JSON.parse(localStorage.getItem('moviesData')); // Mutăm inițializarea aici
-    saveLocalStorage('moviesData', moviesData);
+    // const moviesData = JSON.parse(localStorage.getItem('moviesData')); 
+    // saveLocalStorage('moviesData', moviesData);
+    // preiau datele din formular 
+    const moviesData = loadLocalStorage(STORAGE_KEY_SEARCH);
     console.log(moviesData);
   
-    if (selectedMovie && moviesData) { // Verificăm dacă selectedMovie și moviesData sunt definite
-      const movieData = moviesData.find(movie => movie.id === selectedMovieId);
+    if (selectedMovie && moviesData) { 
+      // Caut filmul selectat în rezultatele căutării
+      const movieData = moviesData.results.find(movie => movie.id === selectedMovieId); 
       console.log(movieData);
       renderModalContent(movieData);
       openModal();
@@ -80,8 +84,7 @@ function createModal(event) {
     } else {
       console.error('Selected movie or moviesData is not defined.');
     }
-  }
-  
+}
 function renderModalContent(movieData) {
   modalBackdrop.firstElementChild.innerHTML = modalMoviemarkup(movieData);
 };
@@ -121,11 +124,3 @@ modalBackdrop.firstElementChild.classList.add('modal');
 //   modalBackdrop.firstElementChild.dataset.id = '';
   movieModal.innerHTML = '';
   };
-
-// const modalCloseBtn = `
-// <button class="modal__btn-closs btn__closs-modal">
-//       <svg
-//       <use xlink:href="../images/symbol-defs.svg#icon-close"></use>
-//       </svg>
-//     </button>
-// `;
