@@ -5,10 +5,11 @@ import { getSearchMovie } from './api';
 import { renderMarkup } from './cardsMarkup'; 
 import { saveLocalStorage } from './storage';
 import { STORAGE_KEY_SEARCH } from './constants';
+import { createModal } from './modal-cards';
 
 const loader = document.querySelector('.loader');
-
 const searchInput = document.getElementById('header-input');
+const list= document.querySelector('.list-cards');
 
 Notiflix.Notify.init({
     width: '400px',
@@ -40,7 +41,8 @@ async function handleSearch(event) {
             return Notiflix.Notify.failure("Search result not successful. Enter the correct movie name!");
         }
 
-         saveLocalStorage(STORAGE_KEY_SEARCH, searchResult);
+         const moviesDataForm = saveLocalStorage(STORAGE_KEY_SEARCH, searchResult);
+         saveLocalStorage('moviesData', moviesDataForm);
 
         renderMarkup(searchResult);
     } catch (error) {
@@ -49,6 +51,13 @@ async function handleSearch(event) {
         loader.style.display = 'none';
     }
 }
+if (list) {
+    list.addEventListener('click', handleListClick);
+  };
 
+function handleListClick(event) {
+    createModal(event);
+}
 
 document.querySelector('.header-form').addEventListener('submit', handleSearch);
+
