@@ -12,9 +12,8 @@ export const IMG_W100 = `/w100`;
 export const IMG_ORIG = `/original`;
 
 export const getTrending = async (page = 1) => {
-  const { data } = await axios.get(
-    `/trending/movie/week?api_key=${API_KEY}&page=${page}`
-  );
+  const url = `/trending/movie/week?api_key=${API_KEY}&page=${page}`;
+  const { data } = await axios.get(url);
   return data;
 };
 
