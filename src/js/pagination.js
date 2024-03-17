@@ -14,12 +14,12 @@ const nextBtn = document.querySelector('.prev-btn');
 const prevBtn = document.querySelector('.next-btn');
 const pageNumberContainer = document.querySelector('.page-number');
 nextBtn.addEventListener('click', () => {
-  page++;
+  currentPage++;
   getTrendingMovies(currentPage);
 });
 prevBtn.addEventListener('click', () => {
-  if (page > 1) {
-    page--;
+  if (currentPage > 1) {
+    currentPage--;
     getTrendingMovies(currentPage);
   } else {
     prevBtn.classList.add('disabled');
@@ -40,9 +40,19 @@ const itemsPerPage = 20;
 const totalPages = Math.ceil(totalItems / itemsPerPage);
 function displayPageNumbers(totalPages) {
   pageNumberContainer.innerHTML = '';
-  const maxButtonsToShow = 3;
-  const startPage = Math.max(1, currentPage - Math.floor(maxButtonsToShow / 2));
+  const maxButtonsToShow = 5;
+  let startPage = Math.max(1, currentPage - Math.floor(maxButtonsToShow / 2));
   const endPage = Math.min(totalPages, startPage + maxButtonsToShow - 1);
+
+  if (
+    totalPages > maxButtonsToShow &&
+    currentPage > Math.floor(maxButtonsToShow / 2)
+  ) {
+    startPage = Math.min(
+      currentPage - Math.floor(maxButtonsToShow / 2),
+      totalPages - maxButtonsToShow + 1
+    );
+  }
 
   for (let i = startPage; i <= endPage; i++) {
     const button = createPageNumberButton(i);
