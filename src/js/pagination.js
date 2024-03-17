@@ -3,16 +3,16 @@ import { renderMarkup } from './cardsMarkup';
 import { loader } from './searchForm';
 import { saveLocalStorage } from './storage';
 import { loader } from './searchForm';
-const content = document.querySelector(".fetch-cards");
+const content = document.querySelector('.fetch-cards');
 function getTrendingMovies(page) {
-  loader.style.display ="block";
-  content.style.display ="none";
+  loader.style.display = 'block';
+  content.style.display = 'none';
 
   getTrending(page).then(data => {
     renderMarkup(data);
     saveLocalStorage('moviesData', data.results);
-    loader.style.display ="none";
-    content.style.display ="block";
+    loader.style.display = 'none';
+    content.style.display = 'block';
   });
 }
 let currentPage = 1;
@@ -40,9 +40,22 @@ function createPageNumberButton(pageNumber) {
   button.addEventListener('click', () => {
     currentPage = pageNumber;
     getTrendingMovies(currentPage);
+    updateActiveButton();
   });
   return button;
 }
+
+function updateActiveButton() {
+  const buttons = pageNumberContainer.querySelectorAll('button');
+  buttons.forEach(button => {
+    button.classList.remove('active');
+    if (parseInt(button.textContent) === currentPage) {
+      button.classList.add('active');
+    }
+  });
+}
+updateActiveButton();
+
 const totalItems = 1000;
 const itemsPerPage = 20;
 const totalPages = Math.ceil(totalItems / itemsPerPage);
