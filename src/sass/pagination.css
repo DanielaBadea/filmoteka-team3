@@ -10,3 +10,12 @@
 .disabled {
   display: none;
 }
+.page-number {
+  font-size: 25px;
+}
+.page-number button {
+  border: none;
+  background-color: #fff;
+  gap: 5px;
+  cursor: pointer;
+}
