@@ -1,17 +1,17 @@
-import { saveLocalStorage } from './storage';
 import { IMG_BASE_URL, IMG_W400 } from './api';
-import {loadLocalStorage} from './storage';
+import {loadLocalStorage, saveLocalStorage} from './storage';
 
 const modalBackdrop = document.querySelector('.modal-backdrop');
 const movieModal = document.querySelector('.modal');
 const list= document.querySelector('.list-cards');
+
 
 const genresConverting = (genresIds) => {
   const genresList = loadLocalStorage('genresList');
   const genreArray = [];
   genresIds.map(genreId => {
     genresList.map(genre => {
-      if (genreId === genre.id) {genreArray.push(genre.name)} 
+      if (genreId === genre.id) {genreArray.push(genre.name)}
     });
   });
   return(genreArray.join(', '));
@@ -54,7 +54,8 @@ return `
   </p>
 </div>
 <div class="modal__buttons">
-    <button type="button" class="modal__add-watched" data-watched='false'>add to watched</button>
+    <button type="button" id="btn-removeWatched" class="modal__remove-watched inactive" data-watched='false'>remove from watched</button>
+    <button type="button" id="btn-addWatched" class="modal__add-watched" data-watched='false'>add to watched</button>
     <button type="button" class="modal__add-queue" data-queue='false' >add to queue</button>
     </div>
     </div>
@@ -68,22 +69,27 @@ export function createModal(event) {
     const selectedMovie = event.target.closest('li');
     const selectedMovieId = Number(selectedMovie.getAttribute('key'));
     const parseData = localStorage.getItem('moviesData')
-    const moviesData = JSON.parse(parseData); 
+    const moviesData = JSON.parse(parseData);
 
-    saveLocalStorage('moviesData', moviesData);
+    // saveLocalStorage('moviesData', moviesData);
     console.log(moviesData);
-  
-    if (selectedMovie && moviesData) { 
+
+    if (selectedMovie && moviesData) {
       const movieData = moviesData.find(movie => movie.id === selectedMovieId);
       console.log(movieData);
       renderModalContent(movieData);
       openModal();
+      document.getElementById('btn-addWatched').addEventListener("click", addToWatched)
+      document.getElementById('btn-removeWatched').addEventListener("click", removeFromWatched)
+      changeStateWatchedBtn();
+
+
       modalBackdrop.firstElementChild.dataset.id = movieData.id;
     } else {
       console.error('Selected movie or moviesData is not defined.');
     }
   }
-  
+
 function renderModalContent(movieData) {
   modalBackdrop.firstElementChild.innerHTML = modalMoviemarkup(movieData);
 };
@@ -131,3 +137,53 @@ modalBackdrop.firstElementChild.classList.add('modal');
 //       </svg>
 //     </button>
 // `;
+
+
+
+function addToWatched() {
+  const id = modalBackdrop.firstElementChild.dataset.id;
+  const watchedMovies = loadLocalStorage('watched');
+  var moviedToWatchIds = [];
+  if (watchedMovies) {
+    if (watchedMovies.includes(id)) {
+      return;
+    }
+    moviedToWatchIds  = watchedMovies;
+  }
+  moviedToWatchIds.push(id);
+  saveLocalStorage('watched', moviedToWatchIds)
+  changeStateWatchedBtn()
+}
+
+function removeFromWatched() {
+  const id = modalBackdrop.firstElementChild.dataset.id;
+  const watchedMovies = loadLocalStorage('watched');
+  var moviedToWatchIds = [];
+  if (watchedMovies) {
+    for (let i = 0; i < watchedMovies.length; i++) {
+      if (id !== watchedMovies[i]) {
+        moviedToWatchIds.push(watchedMovies[i]);
+      }
+    }
+    saveLocalStorage('watched', moviedToWatchIds)
+  }
+
+  changeStateWatchedBtn()
+}
+function changeStateWatchedBtn() {
+  const id = modalBackdrop.firstElementChild.dataset.id;
+  const watchedMovies = loadLocalStorage('watched');
+  if (watchedMovies) {
+    if (watchedMovies.includes(id)) {
+      // adauga clasa inactive pe buton
+      document.getElementsByClassName('modal__add-watched')[0].classList.add("inactive")
+      // scoate clasa inactive de pe butonul cu clasa "modal__remove-watched"
+      document.getElementsByClassName('modal__remove-watched')[0].classList.remove("inactive")
+
+    }
+  }
+  // scoate clasa inactive pe buton
+  document.getElementsByClassName('modal__add-watched')[0].classList.remove("inactive")
+   // adauga clasa inactive de pe butonul cu clasa "modal__remove-watched"
+   document.getElementsByClassName('modal__remove-watched')[0].classList.add("inactive")
+}

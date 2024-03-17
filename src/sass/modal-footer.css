@@ -86,6 +86,14 @@
   width: 170px;
   text-align: center;
 }
+.team-item div {
+  border-radius: 30px;
+  width: 105px;
+  height: 140px;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
 @media screen and (max-width: 650px) {
   .mondial-content {
     max-width: 300px;
