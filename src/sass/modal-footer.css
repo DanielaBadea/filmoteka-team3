@@ -1,32 +1,101 @@
 .mondial-container {
   visibility: visible;
-  padding-left: 12px;
-  padding-right: 12px;
-  background-color: #000;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 48px 20px 40px;
-  transform: (-50%, -50%) scale(1);
-  opacity: 1;
-  transition: transform 0.5s, cubic-bezier(0.47, 0, 0.745, 0.715);
   position: fixed;
-  left: 0px;
-  top: 0px;
   z-index: 11;
-  width: 50%;
-  height: 50%;
-  background-color: rgba(167, 88, 105, 0.377);
+  width: 100%;
+  height: 100%;
+  background-color: #0000008f;
   overflow: auto;
-  transition: opacity 0.15s linear;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  top: 0;
+  left: 0;
 }
-.is-hidden {
+
+/* .is-hidden {
   opacity: 0;
   visibility: hidden;
-}
+} */
 .close-btn-mondial {
-  width: 30px;
-  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-.is-open {
+/* .is-open {
   visibility: hidden;
+} */
+.mondial-content {
+  max-width: 650px;
+  /* height: 580px; */
+  background-color: #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* .container-img {
+  text-align: center;
+} */
+.container-img ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-left: 50px;
+  padding-bottom: 35px;
+}
+.developer-img {
+  border-radius: 60px;
+  height: 140px;
+  width: 105px;
+  margin-left: 30px;
+}
+.title-team img {
+  width: 60px;
+  height: 60px;
+}
+.title-team {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  align-items: center;
+  gap: 10px;
+}
+.team-name {
+  padding-top: 10px;
+  font-size: 20px;
+}
+.team-function {
+  font-size: 17px;
+  color: #ff6b08;
+}
+.social-icon {
+  width: 25px;
+  height: 25px;
+  margin-left: 70px;
+}
+.team-item {
+  width: 170px;
+  text-align: center;
+}
+@media screen and (max-width: 650px) {
+  .mondial-content {
+    max-width: 300px;
+  }
+}
+@media screen and (min-width: 651px) and (max-width: 1200px) {
+  .mondial-content {
+    max-width: 520px;
+    top: 50%;
+    left: 50%;
+    padding-left: 30px;
+  }
 }
