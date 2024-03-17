@@ -5,7 +5,11 @@
     left:50%;
     transform: translate(-50%, -50%);
     transition: 0.5s;
-    
+
+}
+
+.text-nav.inactive {
+    display: none;
 }
 
 .form-box {
@@ -17,7 +21,7 @@
     padding: 5px;
     overflow: hidden;
     border-radius: 30px;
-    
+
 }
 @media screen and (max-width: 320px) {
     .form-box {
@@ -40,7 +44,7 @@
     position: relative;
     border-radius: 30px;
     box-shadow: 0 0 20px 9px #FF61241F;
-    
+
 }
 
 .toggle-btn {
@@ -53,7 +57,7 @@
     position: relative;
     text-align: center;
     font-weight: 700;
-    
+
 }
 
 #btn-connect {
@@ -64,8 +68,8 @@
     border-radius: 30px;
     text-align: center;
     transition: 0.5s;
-    
-    
+
+
 }
 .input-group {
     top: 140px;
@@ -73,7 +77,7 @@
     position: absolute;
     width: 70%;
     transition: 0.5s;
-    
+
 }
 
 .input-field {
@@ -102,7 +106,7 @@
 }
 
 .check-box {
-    margin: 30px 10px 30px 0;   
+    margin: 30px 10px 30px 0;
 }
 
 .span-modal {
@@ -153,3 +157,5 @@
 .blur {
     filter: blur(5px);
 }
+
+
