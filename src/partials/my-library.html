@@ -11,11 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../sass/my-library.css">
+    <link rel="stylesheet" href="../sass/my-library.css" />
   </head>
   <body>
     <header id="header">
-      <section class="header-container header-container-lib ">
+      <section class="header-container header-container-lib">
         <div class="header-nav">
             <nav class="container-nav">
                 <div class="nav-left">
@@ -44,13 +44,13 @@
              <div class="nav-right">
                 <ul class="header-list">
                   <li class="header-items mylibrary-btns">
-                   <button id="watchedButton" class="button watched-btn">WATCHED</button>
+                   <button id="watchedButton" class="button btn-nav watched-btn">WATCHED</button>
                   </li>
-                  <li class="header-items mylibrary-btns">
+                  <li class="header-items btn-nav mylibrary-btns">
                   <button id="queueButton" class="button queue-btn">QUEUE</button>
                   </li>
                   <li class="header-items clear-btn-container">
-                    <button id = "clearButton" class="clear-btn">CLEAR WATCHED LIST</button>
+                    <button id = "clearButton" class="clear-btn btn-nav">CLEAR WATCHED LIST</button>
                   </li>
                     <li class="header-items theme-btn">
                         <button class="toggle-theme btn">
@@ -78,42 +78,45 @@
                 </a>
               </div>
           </div>
+        </div>
       </section>
     </header>
     <section class="taggle-section-lib">
       <!-- Posters ls btn watched list -->
       <div class="cards-section">
-        <div class="container"><div class="watched-movies-list"></div></div>   
+        <div class="container"><div class="watched-movies-list"></div></div>
       </div>
       <!-- Posters ls btn queue list -->
       <div class="cards-section">
-        <div class="container"><div class="queue-movies-list">
-          <img class="hiddenContent-queue" src="../images/library/queue/missingMovies.jpg" alt="Missing movies">
-        </div></div>
+        <div class="container">
+          <div class="queue-movies-list">
+            <img
+              class="hiddenContent-queue"
+              src="../images/library/queue/missingMovies.jpg"
+              alt="Missing movies"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
-      <footer class="footer-section">
-        <div class="container-footer container">
-          <span class="copyright span-text"> © 2024 | All Rights Reserved |</span>
-          <span class="students span-text">
-            Developed with
-            <svg class="footer-icon">
-              <use xlink:href="../images/symbol-defs.svg#icon-heart"></use>
-            </svg>
-            by
-            <button
-              type="button"
-              class="footer-container-btn"
-              data-modal-open-contacts
-            >
-              GoIT Students
-            </button>
-          </span>
-        </div>
-      </footer>
+    <footer class="footer-section">
+      <div class="container-footer container">
+        <span class="copyright span-text"> © 2024 | All Rights Reserved |</span>
+        <span class="students span-text">
+          Developed with
+          <svg class="footer-icon">
+            <use xlink:href="../images/symbol-defs.svg#icon-heart"></use>
+          </svg>
+          by
+          <button type="button" class="footer-container-btn" data-modal-open-js>
+            GoIT Students
+          </button>
+        </span>
+      </div>
+    </footer>
 
-<!-- <div id="myModal" class="modal">
+    <!-- <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
     <div class="movie-details">
@@ -123,9 +126,10 @@
     </div>
   </div>
 </div> -->
-      <script defer type="module" src="../js/theme-mode.js"></script>
-      <script defer type="module" src="../js/active-class.js"></script>
-      <script defer type ="module" src="../js/watched.js"></script>
-      <script defer src="../js/queue.js"></script>
+    <script defer type="module" src="../js/theme-mode.js"></script>
+    <script defer type="module" src="../js/active-class.js"></script>
+    <script defer type="module" src="../js/watched.js"></script>
+    <script defer type="module" src="../js/modal.js"></script>
+    <script defer src="../js/queue.js"></script>
   </body>
 </html>

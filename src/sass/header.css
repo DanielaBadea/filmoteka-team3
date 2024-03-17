@@ -163,23 +163,25 @@
   cursor: pointer;
   border-radius: 15px;
   transition: background-color 0.3s;
+  display: inline-block;
+  overflow: hidden;
 }
 .btn-nav:hover,
 .btn-nav:focus {
   background-color: #9d1d1d;
 }
 @media screen and (min-width: 320px) {
-  .btn-nav {
+  .text-nav {
     padding: 10px 22px;
   }
 }
 @media screen and (min-width: 768px) {
-  .btn-nav {
+  .header-nav {
     padding: 12px 20px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .btn-nav {
+  .header-nav {
     padding: 14px 24px;
   }
 }
