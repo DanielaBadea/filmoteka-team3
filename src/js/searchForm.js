@@ -7,7 +7,7 @@ import { saveLocalStorage } from './storage';
 import { STORAGE_KEY_SEARCH } from './constants';
 import { createModal } from './modal-cards';
 
-const loader = document.querySelector('.loader');
+export const loader = document.querySelector('.loader');
 const searchInput = document.getElementById('header-input');
 const list= document.querySelector('.list-cards');
 
