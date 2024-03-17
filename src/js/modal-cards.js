@@ -64,14 +64,16 @@ return `
 if (list) {
   list.addEventListener('click', createModal);
 };
-function createModal(event) {
+export function createModal(event) {
     const selectedMovie = event.target.closest('li');
     const selectedMovieId = Number(selectedMovie.getAttribute('key'));
-    let moviesData = JSON.parse(localStorage.getItem('moviesData')); // Mutăm inițializarea aici
+    const parseData = localStorage.getItem('moviesData')
+    const moviesData = JSON.parse(parseData); 
+
     saveLocalStorage('moviesData', moviesData);
     console.log(moviesData);
   
-    if (selectedMovie && moviesData) { // Verificăm dacă selectedMovie și moviesData sunt definite
+    if (selectedMovie && moviesData) { 
       const movieData = moviesData.find(movie => movie.id === selectedMovieId);
       console.log(movieData);
       renderModalContent(movieData);
