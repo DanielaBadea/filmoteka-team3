@@ -1,4 +1,3 @@
-
 import { debounce } from 'lodash';
 import Notiflix from 'notiflix';
 import { getSearchMovie } from './api'; 
@@ -9,7 +8,7 @@ import { createModal } from './modal-cards';
 
 export const loader = document.querySelector('.loader');
 const searchInput = document.getElementById('header-input');
-const list= document.querySelector('.list-cards');
+const list = document.querySelector('.list-cards');
 
 Notiflix.Notify.init({
     width: '400px',
@@ -21,10 +20,8 @@ Notiflix.Notify.init({
     pauseOnHover: true,
 });
 
-async function handleSearch(event) {
-    event.preventDefault(); 
-    const searchTerm = searchInput.value.trim();
-
+// Funcție pentru a efectua căutarea cu debounce
+const debouncedSearch = debounce(async (searchTerm) => {
     try {
         if (!searchTerm) {
             return Notiflix.Notify.failure("Please enter a movie name!");
@@ -42,7 +39,7 @@ async function handleSearch(event) {
         }
 
         saveLocalStorage(STORAGE_KEY_SEARCH, searchResult);
-         saveLocalStorage('moviesData', searchResult.results);
+        saveLocalStorage('moviesData', searchResult.results);
 
         renderMarkup(searchResult);
     } catch (error) {
@@ -50,14 +47,26 @@ async function handleSearch(event) {
     } finally {
         loader.style.display = 'none';
     }
+}, 300); // Așteaptă 300 milisecunde după ultimul eveniment de tastare
+
+// Funcție pentru a gestiona evenimentul de tastare
+function handleSearchInput(event) {
+    const searchTerm = event.target.value.trim();
+    debouncedSearch(searchTerm);
 }
+
+// Adaugă evenimentul de tastare la input pentru a gestiona căutarea automată cu debounce
+searchInput.addEventListener('input', handleSearchInput);
+
 if (list) {
     list.addEventListener('click', handleListClick);
-  };
+};
 
 function handleListClick(event) {
     createModal(event);
 }
 
-document.querySelector('.header-form').addEventListener('submit', handleSearch);
-
+document.querySelector('.header-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    handleSearch(event);
+});
