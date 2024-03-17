@@ -4,9 +4,10 @@ import { loader } from './searchForm';
 import { saveLocalStorage } from './storage';
 import { loader } from './searchForm';
 const content = document.querySelector(".fetch-cards");
-function getTrendingMovies() {
+function getTrendingMovies(page) {
   loader.style.display ="block";
   content.style.display ="none";
+
   getTrending(page).then(data => {
     renderMarkup(data);
     saveLocalStorage('moviesData', data.results);
@@ -14,20 +15,47 @@ function getTrendingMovies() {
     content.style.display ="block";
   });
 }
-let page = 1;
-getTrendingMovies();
+let currentPage = 1;
+getTrendingMovies(currentPage);
 
 const nextBtn = document.querySelector('.prev-btn');
 const prevBtn = document.querySelector('.next-btn');
+const pageNumberContainer = document.querySelector('.page-number');
 nextBtn.addEventListener('click', () => {
   page++;
-  getTrendingMovies();
+  getTrendingMovies(currentPage);
 });
 prevBtn.addEventListener('click', () => {
   if (page > 1) {
     page--;
-    getTrendingMovies();
+    getTrendingMovies(currentPage);
   } else {
     prevBtn.classList.add('disabled');
   }
 });
+
+function createPageNumberButton(pageNumber) {
+  const button = document.createElement('button');
+  button.textContent = pageNumber;
+  button.addEventListener('click', () => {
+    currentPage = pageNumber;
+    getTrendingMovies(currentPage);
+  });
+  return button;
+}
+const totalItems = 1000;
+const itemsPerPage = 20;
+const totalPages = Math.ceil(totalItems / itemsPerPage);
+function displayPageNumbers(totalPages) {
+  pageNumberContainer.innerHTML = '';
+  const maxButtonsToShow = 3;
+  const startPage = Math.max(1, currentPage - Math.floor(maxButtonsToShow / 2));
+  const endPage = Math.min(totalPages, startPage + maxButtonsToShow - 1);
+
+  for (let i = startPage; i <= endPage; i++) {
+    const button = createPageNumberButton(i);
+    pageNumberContainer.appendChild(button);
+  }
+}
+
+displayPageNumbers(totalPages);
