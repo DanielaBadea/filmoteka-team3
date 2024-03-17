@@ -165,17 +165,17 @@
   background-color: #9d1d1d;
 }
 @media screen and (min-width: 320px) {
-  .btn-nav {
+  .text-nav {
     padding: 10px 22px;
   }
 }
 @media screen and (min-width: 768px) {
-  .btn-nav {
+  .text-nav {
     padding: 12px 20px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .btn-nav {
+  .text-nav {
     padding: 14px 24px;
   }
 }
@@ -335,7 +335,7 @@ footer-container-btn:focus {
 .watched-btn,
 .queue-btn,
 .clear-btn {
-  padding: 12px 18px 12px;
+  /* padding: 12px 18px 12px; */
   color: #fff;
   background-color: #fee6;
   border: none;
@@ -347,6 +347,23 @@ footer-container-btn:focus {
   cursor: pointer;
   background-color: #fee6;
   transition: background-color 0.3s;
+}
+.watched-btn {
+  padding: 10px 23px 10px 23px;
+}
+.queue-btn {
+  padding: 10px 24px 10px 24px;
+}
+
+@media screen and (min-width: 1200px) {
+  .watched-btn {
+    padding: 14px 32px 14px 32px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .queue-btn {
+    padding: 14px 24px 14px 24px;
+  }
 }
 .watched-btn:hover,
 .watched-btn:focus,
