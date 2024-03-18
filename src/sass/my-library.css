@@ -337,7 +337,6 @@ footer-container-btn:focus {
 .clear-btn {
   /* padding: 12px 18px 12px; */
   color: #fff;
-  background-color: #fee6;
   border: none;
   font-size: 12px;
   line-height: 1.33;
@@ -345,7 +344,6 @@ footer-container-btn:focus {
   cursor: pointer;
   border-radius: 15px;
   cursor: pointer;
-  background-color: #fee6;
   transition: background-color 0.3s;
 }
 .watched-btn {
@@ -443,6 +441,9 @@ footer-container-btn:focus {
   flex-direction: column;
   gap: 20px;
 }
+.watched-movies-list.inactive {
+  display: none;
+}
 .container-posters-ls {
   display: flex;
   flex-direction: column;
@@ -467,4 +468,28 @@ footer-container-btn:focus {
   .poster-list-img {
     width: 340px;
   }
+}
+
+.library-container {
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+
+}
+
+.librarybtnlist {
+  display: flex;
+  justify-content: center;
+}
+
+.mylibrary-button {
+  display: inline;
+}
+
+.watched-btn {
+  background-color: #ca2525;
+}
+
+.queue-btn {
+  background-color: #ca2525;
 }

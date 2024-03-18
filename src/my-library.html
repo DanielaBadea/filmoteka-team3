@@ -43,15 +43,6 @@
                 </div>
              <div class="nav-right">
                 <ul class="header-list">
-                  <li class="header-items mylibrary-btns">
-                   <button id="watchedButton" class="button btn-nav watched-btn">WATCHED</button>
-                  </li>
-                  <li class="header-items btn-nav mylibrary-btns">
-                  <button id="queueButton" class="button queue-btn">QUEUE</button>
-                  </li>
-                  <li class="header-items clear-btn-container">
-                    <button id = "clearButton" class="clear-btn btn-nav">CLEAR WATCHED LIST</button>
-                  </li>
                     <li class="header-items theme-btn">
                         <button class="toggle-theme btn">
                           <svg class="icon-theme-mode">
@@ -81,17 +72,34 @@
         </div>
       </section>
     </header>
+    <div class="library-container">
+      <h2>Select you desired library:</h2>
+      <div class="librarybtnlist">
+        <ul>
+          <li class="mylibrary-button">
+            <button id="watchedButton" class="watched-btn">WATCHED</button>
+           </li>
+           <li class="mylibrary-button">
+            <button id="queueButton" class="queue-btn">QUEUE</button>
+            </li>
+           <li class="header-items mylibrary-button lear-btn-container">
+             <button id = "clearButton" class="clear-btn btn-nav">CLEAR WATCHED LIST</button>
+           </li>
+        </ul>
+      </div>
+
+    </div>
     <section class="taggle-section-lib">
       <!-- Posters ls btn watched list -->
       <div class="cards-section">
         <div class="container">
-          <ul class="watched-movies-list movies-list-lib"></ul>
+          <ul class="watched-movies-list movies-list-lib inactive"></ul>
         </div>
       </div>
       <!-- Posters ls btn queue list -->
       <div class="cards-section">
         <div class="container">
-          <ul class="queue-movies-list movies-list-lib">
+          <ul class="queue-movies-list movies-list-lib inactive">
             <!-- <img
               class="hiddenContent-queue"
               src="./images/library/queue/missingMovies.jpg"
@@ -109,5 +117,6 @@
     <script defer type="module" src="./js/watched.js"></script>
     <script defer type="module" src="./js/modal.js"></script>
     <script defer type="module" src="./js/queue.js"></script>
+
   </body>
 </html>

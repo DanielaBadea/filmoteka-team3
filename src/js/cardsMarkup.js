@@ -63,7 +63,7 @@ export function createListMarkup(data) {
           <h2 class='poster-list-title text-posters'><b>${original_title}</b></h2>
           <div class='poster-list-info'>
             <p class='poster-list-text text-posters'>${genre_names}</p>
-            <p class='poster-list-age text-posters'>| ${release_date}</p>
+            <p class='poster-list-age text-posters'><left>| ${release_date}</p>
           </div>
         </div>
       </li>`;
