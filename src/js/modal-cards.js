@@ -167,17 +167,17 @@ function changeStateWatchedBtn() {
   const watchedMovies = loadLocalStorage('watched');
   if (watchedMovies) {
     if (watchedMovies.includes(id)) {
-      // adauga clasa inactive pe buton
-      document.getElementsByClassName('modal__add-watched')[0].classList.add("inactive")
-      // scoate clasa inactive de pe butonul cu clasa "modal__remove-watched"
-      document.getElementsByClassName('modal__remove-watched')[0].classList.remove("inactive")
+      // // adauga clasa inactive pe buton
+      // document.getElementsByClassName('modal__add-watched')[0].classList.add("inactive")
+      // // scoate clasa inactive de pe butonul cu clasa "modal__remove-watched"
+      // document.getElementsByClassName('modal__remove-watched')[0].classList.remove("inactive")
 
     }
   }
-  // scoate clasa inactive pe buton
-  document.getElementsByClassName('modal__add-watched')[0].classList.remove("inactive")
-   // adauga clasa inactive de pe butonul cu clasa "modal__remove-watched"
-   document.getElementsByClassName('modal__remove-watched')[0].classList.add("inactive")
+  // // scoate clasa inactive pe buton
+  // document.getElementsByClassName('modal__add-watched')[0].classList.remove("inactive")
+  //  // adauga clasa inactive de pe butonul cu clasa "modal__remove-watched"
+  //  document.getElementsByClassName('modal__remove-watched')[0].classList.add("inactive")
 }
 
 
