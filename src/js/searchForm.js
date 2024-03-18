@@ -20,7 +20,6 @@ Notiflix.Notify.init({
     pauseOnHover: true,
 });
 
-// Funcție pentru a efectua căutarea cu debounce
 const debouncedSearch = debounce(async (searchTerm) => {
     try {
         if (!searchTerm) {
@@ -47,7 +46,7 @@ const debouncedSearch = debounce(async (searchTerm) => {
     } finally {
         loader.style.display = 'none';
     }
-}, 300); // Așteaptă 300 milisecunde după ultimul eveniment de tastare
+}, 300); 
 
 // Funcție pentru a gestiona evenimentul de tastare
 function handleSearchInput(event) {
