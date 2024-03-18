@@ -43,8 +43,8 @@ function createPageNumberButton(pageNumber) {
   });
   return button;
 }
-const totalItems = 1000;
-const itemsPerPage = 20;
+const totalItems = 2000;
+const itemsPerPage = 9;
 const totalPages = Math.ceil(totalItems / itemsPerPage);
 function displayPageNumbers(totalPages) {
   pageNumberContainer.innerHTML = '';

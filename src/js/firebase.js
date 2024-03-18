@@ -41,7 +41,7 @@ function registerModal() {
 
         set(ref(database, 'users/' + user.uid), user_data)
             .then(() => {
-                alert('User Created!!');
+                alert('User Created! Please proceed to Login!');
             })
             .catch((error) => {
                 alert('Error creating user data: ' + error.message);
