@@ -75,10 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // }
 function getWatchedMoviesDetails(watchedMovies) {
   const moviesData = loadLocalStorage('moviesData');
-  const watchedList = loadLocalStorage('watched');
+  const genresList = loadLocalStorage('genresList');
   var moviesDetailed = [];
 
-  if (!moviesData || !watchedList) {
+  if (!moviesData || !genresList) {
     console.error("Error: Missing data in local storage");
     return moviesDetailed;
   }
@@ -89,7 +89,7 @@ function getWatchedMoviesDetails(watchedMovies) {
         const movieDetails = { ...moviesData[j] };
         const genreIds = movieDetails.genre_ids;
         if (genreIds && Array.isArray(genreIds)) {
-          movieDetails.genre_names = watchedList.filter(genre => genreIds.includes(genre.id)).map(genre => genre.name).join(', ');
+          movieDetails.genre_names = genresList.filter(genre => genreIds.includes(genre.id)).map(genre => genre.name).join(', ');
           moviesDetailed.push(movieDetails);
         } else {
           console.error(`Error: Missing genre_ids property for movie with ID ${movieDetails.id}`);
