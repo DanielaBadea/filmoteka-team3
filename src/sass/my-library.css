@@ -427,13 +427,25 @@ footer-container-btn:focus {
   max-width: 95%;
   display: flex;
 }
+
 /*  Posters ls btn watched list  */
-.cards-section {
+.taggle-section-lib {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.cards-section-watched {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 32px;
-  margin-bottom: 32px;
+  /* margin-top: 32px;
+  margin-bottom: 32px; */
+}
+.cards-section-queue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 32px;
+  margin-bottom: 32px; */
 }
 .watched-movies-list {
   display: flex;
@@ -474,7 +486,6 @@ footer-container-btn:focus {
   display: block;
   text-align: center;
   padding-top: 20px;
-
 }
 
 .librarybtnlist {

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const queueMovies = loadLocalStorage('queue') || [];
 
     if (queueMovies && queueMovies.length > 0) {
-      var movies = getWatchedMoviesDetails(queueMovies);
+      var movies = getQueueMoviesDetails(queueMovies);
       const postersMarkup = movies.map(({ original_title, poster_path, vote_average, id, genre_names, release_date }) => {
         let posterPath = '';
         if (poster_path) {
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-function getWatchedMoviesDetails(queueMovies) {
+function getQueueMoviesDetails(queueMovies) {
   const moviesData = loadLocalStorage('moviesData');
   const genresList = loadLocalStorage('genresList');
   var moviesDetailed = [];
