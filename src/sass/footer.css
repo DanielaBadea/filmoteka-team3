@@ -55,4 +55,5 @@
 #logo-team:hover {
   transform: scale(4);
   transition: 0.5s;
+  filter: drop-shadow(0 10px 15px #ca2525);
 }
