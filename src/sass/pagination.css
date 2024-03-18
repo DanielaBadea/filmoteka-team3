@@ -11,12 +11,17 @@
   display: none;
 }
 .page-number {
-  font-size: 25px;
+  font-size: 15px;
 }
 .page-number button {
   padding-top: 5px;
   border: none;
-  background-color: #fff;
+  width: 40px;
+  height: 40px;
   gap: 5px;
   cursor: pointer;
+}
+
+.active {
+  background-color: rgb(238, 127, 1);
 }
