@@ -88,12 +88,12 @@
   background-position: center;
   background-size: cover;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 769px) {
   .mondial-content {
-    max-width: 300px;
+    max-width: auto;
   }
 }
-@media screen and (min-width: 651px) and (max-width: 1200px) {
+@media screen and (min-width: 769px) and (max-width: 1200px) {
   .mondial-content {
     max-width: 520px;
     top: 50%;
