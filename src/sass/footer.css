@@ -45,3 +45,14 @@
 .footer-container-btn:hover {
   color: #ca2525;
 }
+
+
+#logo-team {
+  width: 50px;
+  height: 50px;
+}
+
+#logo-team:hover {
+  transform: scale(4);
+  transition: 0.5s;
+}

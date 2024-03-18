@@ -72,9 +72,6 @@ export function createModal(event) {
     const parseData = localStorage.getItem('moviesData')
     const moviesData = JSON.parse(parseData);
 
-    // saveLocalStorage('moviesData', moviesData);
-    console.log(moviesData);
-
     if (selectedMovie && moviesData) {
       const movieData = moviesData.find(movie => movie.id === selectedMovieId);
       console.log(movieData);
@@ -130,17 +127,8 @@ modalBackdrop.firstElementChild.classList.add('modal');
   document.body.style.overflow = 'overlay';
   document.removeEventListener('keydown', offModalForEscape);
   modalBackdrop.removeEventListener('keydown', offModalForClickBeackdrop);
-//   modalBackdrop.firstElementChild.dataset.id = '';
   movieModal.innerHTML = '';
   };
-
-// const modalCloseBtn = `
-// <button class="modal__btn-closs btn__closs-modal">
-//       <svg
-//       <use xlink:href="../images/symbol-defs.svg#icon-close"></use>
-//       </svg>
-//     </button>
-// `;
 
 
 
@@ -207,17 +195,70 @@ function changeStateWatchedBtn() {
   const watchedMovies = loadLocalStorage('watched');
   if (watchedMovies) {
     if (watchedMovies.includes(id)) {
+      // // adauga clasa inactive pe buton
+      // document.getElementsByClassName('modal__add-watched')[0].classList.add("inactive")
+      // // scoate clasa inactive de pe butonul cu clasa "modal__remove-watched"
+      // document.getElementsByClassName('modal__remove-watched')[0].classList.remove("inactive")
+
+    }
+  }
+  // // scoate clasa inactive pe buton
+  // document.getElementsByClassName('modal__add-watched')[0].classList.remove("inactive")
+  //  // adauga clasa inactive de pe butonul cu clasa "modal__remove-watched"
+  //  document.getElementsByClassName('modal__remove-watched')[0].classList.add("inactive")
+}
+
+
+// queue
+
+
+function addToQueue() {
+  const id = modalBackdrop.firstElementChild.dataset.id;
+  const queueMovies = loadLocalStorage('queue');
+  var moviedToQueueIds = [];
+  if (queueMovies) {
+    if (queueMovies.includes(id)) {
+      return;
+    }
+    moviedToQueueIds  = queueMovies;
+  }
+  moviedToQueueIds.push(id);
+  saveLocalStorage('queue', moviedToQueueIds)
+  changeStateQueueBtn()
+}
+
+function removeFromQueue() {
+  const id = modalBackdrop.firstElementChild.dataset.id;
+  const queueMovies = loadLocalStorage('queue');
+  var moviedToQueueIds = [];
+  if (queueMovies) {
+    for (let i = 0; i < queueMovies.length; i++) {
+      if (id !== queueMovies[i]) {
+        moviedToQueueIds.push(queueMovies[i]);
+      }
+    }
+    saveLocalStorage('queue', moviedToQueueIds)
+  }
+
+  changeStateQueueBtn()
+}
+function changeStateQueueBtn() {
+  debugger
+  const id = modalBackdrop.firstElementChild.dataset.id;
+  const queueMovies = loadLocalStorage('queue');
+  if (queueMovies) {
+    if (queueMovies.includes(id)) {
       // adauga clasa inactive pe buton
-      document.getElementsByClassName('modal__add-watched')[0].classList.add("inactive")
-      // scoate clasa inactive de pe butonul cu clasa "modal__remove-watched"
-      document.getElementsByClassName('modal__remove-watched')[0].classList.remove("inactive")
+      document.getElementsByClassName('modal__add-queue')[0].classList.add("inactive")
+      // scoate clasa inactive de pe butonul cu clasa "modal__remove-queue"
+      document.getElementsByClassName('modal__remove-queue')[0].classList.remove("inactive")
 
     }
   }
   // scoate clasa inactive pe buton
-  document.getElementsByClassName('modal__add-watched')[0].classList.remove("inactive")
-   // adauga clasa inactive de pe butonul cu clasa "modal__remove-watched"
-   document.getElementsByClassName('modal__remove-watched')[0].classList.add("inactive")
+  document.getElementsByClassName('modal__add-queue')[0].classList.remove("inactive")
+   // adauga clasa inactive de pe butonul cu clasa "modal__remove-queue"
+   document.getElementsByClassName('modal__remove-queue')[0].classList.add("inactive")
 }
 
 function changeStateQueueBtn() {
@@ -237,4 +278,3 @@ function changeStateQueueBtn() {
    // adauga clasa inactive de pe butonul cu clasa "modal__remove-queue"
    document.getElementsByClassName('modal__remove-queue')[0].classList.add("inactive")
 }
-
