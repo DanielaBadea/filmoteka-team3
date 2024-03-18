@@ -84,39 +84,30 @@
     <section class="taggle-section-lib">
       <!-- Posters ls btn watched list -->
       <div class="cards-section">
-        <div class="container"><div class="watched-movies-list"></div></div>
+        <div class="container">
+          <ul class="watched-movies-list movies-list-lib"></ul>
+        </div>
       </div>
       <!-- Posters ls btn queue list -->
       <div class="cards-section">
         <div class="container">
-          <div class="queue-movies-list">
-            <img
+          <ul class="queue-movies-list movies-list-lib">
+            <!-- <img
               class="hiddenContent-queue"
               src="./images/library/queue/missingMovies.jpg"
               alt="Missing movies"
-            />
-          </div>
+            /> -->
+          </ul>
         </div>
       </div>
     </section>
 
     <include src="./partials/footer.html"></include>
     <include src="./partials/modal-footer.html"></include>
-
-    <!-- <div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div class="movie-details">
-      <h2 class="movie-title"></h2>
-      <p class="movie-overview"></p>
-      <p class="movie-release-date"></p>
-    </div>
-  </div>
-</div> -->
     <script defer type="module" src="./js/theme-mode.js"></script>
     <script defer type="module" src="./js/active-class.js"></script>
     <script defer type="module" src="./js/watched.js"></script>
     <script defer type="module" src="./js/modal.js"></script>
-    <script defer src="./js/queue.js"></script>
+    <script defer type="module" src="./js/queue.js"></script>
   </body>
 </html>

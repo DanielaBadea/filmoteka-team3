@@ -56,7 +56,8 @@ return `
 <div class="modal__buttons">
     <button type="button" id="btn-removeWatched" class="modal__remove-watched inactive" data-watched='false'>remove from watched</button>
     <button type="button" id="btn-addWatched" class="modal__add-watched" data-watched='false'>add to watched</button>
-    <button type="button" class="modal__add-queue" data-queue='false' >add to queue</button>
+    <button type="button" id="btn-removeQueue" class="modal__remove-queue inactive" data-queue='false'>remove from queue</button>
+    <button type="button" id="btn-addQueue" class="modal__add-queue" data-queue='false' >add to queue</button>
     </div>
     </div>
   </div>`;
@@ -79,10 +80,13 @@ export function createModal(event) {
       console.log(movieData);
       renderModalContent(movieData);
       openModal();
-      document.getElementById('btn-addWatched').addEventListener("click", addToWatched)
-      document.getElementById('btn-removeWatched').addEventListener("click", removeFromWatched)
+      document.getElementById('btn-addWatched').addEventListener("click", addToWatched);
+      document.getElementById('btn-removeWatched').addEventListener("click", removeFromWatched);
       changeStateWatchedBtn();
-
+      document.getElementById('btn-addQueue').addEventListener("click", addToQueue);
+      document.getElementById('btn-removeQueue').addEventListener("click", removeFromQueue)
+      changeStateWatchedBtn();
+      changeStateQueueBtn();
 
       modalBackdrop.firstElementChild.dataset.id = movieData.id;
     } else {
@@ -154,7 +158,20 @@ function addToWatched() {
   saveLocalStorage('watched', moviedToWatchIds)
   changeStateWatchedBtn()
 }
-
+function addToQueue(){
+  const id = modalBackdrop.firstElementChild.dataset.id;
+  const queueMovies = loadLocalStorage('queue');
+  let moviesToQueueIds = [];
+  if(queueMovies){
+    if(queueMovies.includes(id)){
+      return
+    }
+    moviesToQueueIds = queueMovies;
+  }
+  moviesToQueueIds.push(id);
+  saveLocalStorage('queue', moviesToQueueIds);
+  changeStateQueueBtn()
+}
 function removeFromWatched() {
   const id = modalBackdrop.firstElementChild.dataset.id;
   const watchedMovies = loadLocalStorage('watched');
@@ -169,6 +186,21 @@ function removeFromWatched() {
   }
 
   changeStateWatchedBtn()
+}
+function removeFromQueue() {
+  const id = modalBackdrop.firstElementChild.dataset.id;
+  const queueMovies = loadLocalStorage('queue');
+  var moviedToWatchIds = [];
+  if (queueMovies) {
+    for (let i = 0; i < queueMovies.length; i++) {
+      if (id !== queueMovies[i]) {
+        moviedToWatchIds.push(queueMovies[i]);
+      }
+    }
+    saveLocalStorage('queue', moviedToWatchIds)
+  }
+
+  changeStateQueueBtn()
 }
 function changeStateWatchedBtn() {
   const id = modalBackdrop.firstElementChild.dataset.id;
@@ -187,3 +219,22 @@ function changeStateWatchedBtn() {
    // adauga clasa inactive de pe butonul cu clasa "modal__remove-watched"
    document.getElementsByClassName('modal__remove-watched')[0].classList.add("inactive")
 }
+
+function changeStateQueueBtn() {
+  const id = modalBackdrop.firstElementChild.dataset.id;
+  const queueMovies = loadLocalStorage('queue');
+  if (queueMovies) {
+    if (queueMovies.includes(id)) {
+      // adauga clasa inactive pe buton
+      document.getElementsByClassName('modal__add-queue')[0].classList.add("inactive")
+      // scoate clasa inactive de pe butonul cu clasa "modal__remove-queue"
+      document.getElementsByClassName('modal__remove-queue')[0].classList.remove("inactive")
+
+    }
+  }
+  // scoate clasa inactive pe buton
+  document.getElementsByClassName('modal__add-queue')[0].classList.remove("inactive")
+   // adauga clasa inactive de pe butonul cu clasa "modal__remove-queue"
+   document.getElementsByClassName('modal__remove-queue')[0].classList.add("inactive")
+}
+
