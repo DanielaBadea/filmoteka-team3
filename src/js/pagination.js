@@ -1,9 +1,20 @@
 import { getTrending } from './api';
 import { renderMarkup } from './cardsMarkup';
-import { loader } from './searchForm';
+import { loader } from './searchForm'; 
 import { saveLocalStorage } from './storage';
-import { loader } from './searchForm';
+
+
 const content = document.querySelector('.fetch-cards');
+const nextBtn = document.querySelector('.prev-btn'); 
+const prevBtn = document.querySelector('.next-btn');
+const pageNumberContainer = document.querySelector('.page-number');
+
+
+let currentPage = 1;
+const totalItems = 1000;
+const itemsPerPage = 20;
+const totalPages = Math.ceil(totalItems / itemsPerPage);
+
 function getTrendingMovies(page) {
   loader.style.display = 'block';
   content.style.display = 'none';
@@ -11,26 +22,29 @@ function getTrendingMovies(page) {
   getTrending(page).then(data => {
     renderMarkup(data);
     saveLocalStorage('moviesData', data.results);
+    displayPageNumbers(totalPages); 
+    updateActiveButton(); 
+  }).catch(error => {
+    console.error("Failed to fetch trending movies:", error);
+  }).finally(() => {
     loader.style.display = 'none';
     content.style.display = 'block';
   });
 }
-let currentPage = 1;
+
 getTrendingMovies(currentPage);
 
-const nextBtn = document.querySelector('.prev-btn');
-const prevBtn = document.querySelector('.next-btn');
-const pageNumberContainer = document.querySelector('.page-number');
 nextBtn.addEventListener('click', () => {
-  currentPage++;
-  getTrendingMovies(currentPage);
+  if (currentPage < totalPages) { 
+    currentPage++; 
+    getTrendingMovies(currentPage); 
+  }
 });
+
 prevBtn.addEventListener('click', () => {
   if (currentPage > 1) {
-    currentPage--;
+    currentPage--; 
     getTrendingMovies(currentPage);
-  } else {
-    prevBtn.classList.add('disabled');
   }
 });
 
@@ -40,7 +54,6 @@ function createPageNumberButton(pageNumber) {
   button.addEventListener('click', () => {
     currentPage = pageNumber;
     getTrendingMovies(currentPage);
-    updateActiveButton();
   });
   return button;
 }
@@ -54,31 +67,22 @@ function updateActiveButton() {
     }
   });
 }
-updateActiveButton();
 
-const totalItems = 1000;
-const itemsPerPage = 20;
-const totalPages = Math.ceil(totalItems / itemsPerPage);
 function displayPageNumbers(totalPages) {
   pageNumberContainer.innerHTML = '';
   const maxButtonsToShow = 5;
   let startPage = Math.max(1, currentPage - Math.floor(maxButtonsToShow / 2));
-  const endPage = Math.min(totalPages, startPage + maxButtonsToShow - 1);
+  let endPage = Math.min(totalPages, startPage + maxButtonsToShow - 1);
 
-  if (
-    totalPages > maxButtonsToShow &&
-    currentPage > Math.floor(maxButtonsToShow / 2)
-  ) {
-    startPage = Math.min(
-      currentPage - Math.floor(maxButtonsToShow / 2),
-      totalPages - maxButtonsToShow + 1
-    );
+  if (totalPages > maxButtonsToShow && currentPage > Math.floor(maxButtonsToShow / 2)) {
+    startPage = Math.min(currentPage - Math.floor(maxButtonsToShow / 2), totalPages - maxButtonsToShow + 1);
   }
 
   for (let i = startPage; i <= endPage; i++) {
     const button = createPageNumberButton(i);
     pageNumberContainer.appendChild(button);
   }
+  updateActiveButton();
 }
 
 displayPageNumbers(totalPages);
