@@ -41,8 +41,9 @@ export function renderMarkup(data) {
 
 
 export function createListMarkup(data) {
-  if (data) {
-    const markup = data.map(({ original_title, poster_path, overview, vote_average, id, genre_names, release_date }) => {
+  if (data && data.length > 0) {
+    const moviesToShow = data.slice(0, 9);
+    const markup = moviesToShow.map(({ original_title, poster_path, overview, vote_average, id, genre_names, release_date }) => {
       let posterPath = '';
       if (poster_path) { 
         posterPath = `${IMG_BASE_URL}${IMG_W500}/${poster_path}`;
