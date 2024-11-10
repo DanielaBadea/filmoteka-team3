@@ -1,4 +1,5 @@
-export const API_KEY = '35ae7a6d29adc8410d9a0b6d6a863011';
+// export const API_KEY = '35ae7a6d29adc8410d9a0b6d6a863011';
+export const API_KEY = 'fca03d30ba5379eeeeccf116ade4f7b3'
 export const URL = 'https://api.themoviedb.org/3/';
 export const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 export const STORAGE_KEY_GENRES = 'genres';
